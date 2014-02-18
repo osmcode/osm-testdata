@@ -24,6 +24,7 @@ each other.
 Each test case is in its own directory. It contains the following files:
 
 * `data.osm` - the test data itself
+* `labels.osm` - labels for documentation of test cases in OSM format
 * `README` - description of the test
 * `result` - contains either the word "valid" or "invalid" to signify
   whether the data in the file is valid, ie it must be parseable by any OSM
@@ -34,8 +35,9 @@ Each test case is in its own directory. It contains the following files:
 OSM IDs in the tests are used as follows:
 
 All IDs start with the three-digit test number, for instance 711. Nodes are
-then numbered from 000, ways from 800 and relations from 900. So there are
-enough IDs in each test for 800 nodes, 100 ways, and 100 relations.
+then numbered from 000, label nodes from 700, ways from 800 and relations from
+900. So there are enough IDs in each test for 700 nodes, 100 label nodes,
+100 ways, and 100 relations.
 
 ## Geometries
 
@@ -52,6 +54,27 @@ height. They are arranged in a 10x10 square. So test 700 is in
 A script `bin/create_grid.sh` is provided that generates a grid of "tiles"
 for those tests in spatialite format. The result can be used for instance as a
 background layer in a GIS program.
+
+## Label Nodes
+
+Interesting points in the data can be labled by adding an optional `labels.osm`
+file containing OSM nodes with a `label=*` tag. Test software is normally not
+required to read these, but they can be used when visualizing tests for instance.
+
+## Creating Tests
+
+Unfortunately there is no easy way to create tests with JOSM or other software.
+You just don't have enough control over the contents of the data file unless
+you write it by hand.
+
+The easiest way is probably something like this:
+* draw the test case on a piece of paper with grid lines
+* number all nodes
+* number all used grid lines on x and y axis
+* create directory for new test
+* copy over `data.osm` from another test, globally search-and-replace test id
+* add nodes, ways, relations as needed
+* add `README` and `result` files
 
 ## License
 
