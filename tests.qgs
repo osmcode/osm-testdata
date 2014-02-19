@@ -5,10 +5,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>6.48676125845974383</xmin>
-            <ymin>6.9750002499999999</ymin>
-            <xmax>8.51322874154025655</xmax>
-            <ymax>8.02498974999999959</ymax>
+            <xmin>-2.59270198541423591</xmin>
+            <ymin>0.82500024999999999</ymin>
+            <xmax>11.59269198541423584</xmax>
+            <ymax>8.17498974999999994</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -897,7 +897,7 @@
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="1000" maximumScale="1.5e+06" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>ways20140218163052021</id>
             <datasource>dbname='../libosmium/test/osm-testdata/testdata-overview.db' table="ways" (GEOMETRY) sql=</datasource>
             <title></title>
@@ -938,7 +938,7 @@
                             <prop k="width" v="0.3"/>
                             <prop k="width_unit" v="MM"/>
                         </layer>
-                        <layer pass="0" class="MarkerLine" locked="0">
+                        <layer pass="1" class="MarkerLine" locked="0">
                             <prop k="interval" v="3"/>
                             <prop k="interval_unit" v="MM"/>
                             <prop k="offset" v="0"/>
