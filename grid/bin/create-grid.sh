@@ -10,11 +10,13 @@
 #  bin/create-grid.sh 1 7
 #
 
-DATABASE=grid.db
+cat << EOF
+--
+--  Automatically created with create-grid.sh
+--
 
-rm -f $DATABASE
+PRAGMA synchronous = OFF;
 
-(cat << EOF
 CREATE TABLE grid (
     test_id     INTEGER NOT NULL PRIMARY KEY,
     available   INTEGER,
@@ -32,7 +34,7 @@ EOF
 
 for t in $*; do
     title=`echo data/$t-* | cut -d/ -f2`
-    echo "INSERT INTO titles (title, geom) VALUES ('${title}', LineFromText('LINESTRING(${t}.0 2.1,${t}.9999 2.1)', 4326));"
+    echo "INSERT INTO titles (title, geom) VALUES ('${title}', LineFromText('LINESTRING(${t}.0 2.1,${t}.9999 2.1)', 4326));\n"
     for y in `seq 0 9`; do
         for x in `seq 0 9`; do
             if [ -d data/$t-*/$t$y$x ]; then
@@ -54,6 +56,7 @@ for t in $*; do
             fi
             echo "INSERT INTO grid (test_id, geom, available, result, description) VALUES ($t$y$x, Envelope(LineFromText('LINESTRING(${t}.${x} 1.${y},${t}.${x}9999 1.${y}9999)', 4326)), ${available}, '${result}', '${description}');"
         done
+        echo
     done
-done) | spatialite $DATABASE >/dev/null 2>&1
+done
 
