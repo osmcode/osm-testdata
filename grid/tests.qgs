@@ -291,7 +291,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>labels20140218163052006</id>
-            <datasource>dbname='../libosmium/test/osm-testdata/testdata-overview.db' table="labels" (GEOMETRY) sql=</datasource>
+            <datasource>dbname='../../libosmium/test/osm-testdata/testdata-overview.db' table="labels" (GEOMETRY) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -496,7 +496,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>multipolygons20140213160441557</id>
-            <datasource>dbname='../libosmium/test/mp/mp_test.db' table="multipolygons" (GEOMETRY) sql=</datasource>
+            <datasource>dbname='../../libosmium/test/mp/mp_test.db' table="multipolygons" (GEOMETRY) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -695,7 +695,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>nodes20140218163052016</id>
-            <datasource>dbname='../libosmium/test/osm-testdata/testdata-overview.db' table="nodes" (GEOMETRY) sql=</datasource>
+            <datasource>dbname='../../libosmium/test/osm-testdata/testdata-overview.db' table="nodes" (GEOMETRY) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -899,7 +899,7 @@
         </maplayer>
         <maplayer minimumScale="1000" maximumScale="1.5e+06" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>ways20140218163052021</id>
-            <datasource>dbname='../libosmium/test/osm-testdata/testdata-overview.db' table="ways" (GEOMETRY) sql=</datasource>
+            <datasource>dbname='../../libosmium/test/osm-testdata/testdata-overview.db' table="ways" (GEOMETRY) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
