@@ -22,9 +22,17 @@ CREATE TABLE grid (
     description VARCHAR
 );
 SELECT AddGeometryColumn('grid', 'geom', 4326, 'POLYGON', 2);
+
+CREATE TABLE titles (
+    title       VARCHAR
+);
+SELECT AddGeometryColumn('titles', 'geom', 4326, 'LINESTRING', 2);
+
 EOF
 
 for t in $*; do
+    title=`echo data/$t-* | cut -d/ -f2`
+    echo "INSERT INTO titles (title, geom) VALUES ('${title}', LineFromText('LINESTRING(${t}.0 2.1,${t}.9999 2.1)', 4326));"
     for y in `seq 0 9`; do
         for x in `seq 0 9`; do
             if [ -d data/$t-*/$t$y$x ]; then
@@ -44,7 +52,7 @@ for t in $*; do
                 result=""
                 description=""
             fi
-            echo "INSERT INTO grid (test_id, geom, available, result, description) VALUES ($t$y$x, Envelope(LineFromText('LINESTRING(${t}.${x} ${t}.${y},${t}.${x}9999 ${t}.${y}9999)', 4326)), ${available}, '${result}', '${description}');"
+            echo "INSERT INTO grid (test_id, geom, available, result, description) VALUES ($t$y$x, Envelope(LineFromText('LINESTRING(${t}.${x} 1.${y},${t}.${x}9999 1.${y}9999)', 4326)), ${available}, '${result}', '${description}');"
         done
     done
 done) | spatialite $DATABASE >/dev/null 2>&1
