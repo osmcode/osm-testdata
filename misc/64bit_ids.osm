@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<osm version="0.6" generator="Osmosis 0.41">
+<osm version="0.6" generator="Osmosis 0.41" upload="false">
   <bounds minlon="-61.81088" minlat="17.12545" maxlon="-61.76943" maxlat="17.15391" origin="CGImap 0.0.2"/>
   <node id="1" version="4" timestamp="2009-06-06T04:30:26Z" uid="28756" user="Nescum" changeset="1434251" lat="17.1446328" lon="-61.7953887"/>
   <node id="2" version="6" timestamp="2010-11-04T19:59:17Z" uid="360370" user="markinldn" changeset="6291234" lat="17.1515299" lon="-61.7942799"/>
