@@ -17,6 +17,7 @@ each other.
 ## Test Categories
 
 * 1 - Basic geometries
+* 3 - Attributes
 * 7 - Multipolygon geometries
 
 ## Test Cases
@@ -29,6 +30,8 @@ Each test case is in its own directory. It contains the following files:
 * `result` - contains either the word "valid" or "invalid" to signify
   whether the data in the file is valid, ie it must be parseable by any OSM
   software, or invalid, in which case the handling of the data is unspecified.
+* `out.wkt` (optional) - geometry of all nodes and ways in data.osm in WKT
+  format
 
 ## ID Space Used
 
@@ -45,21 +48,24 @@ Node coordinates of one test category are always inside a bounding box with one
 degree width and height. The position of the bounding box is given by the test
 number.
 
-Example: All tests numbered 7xx are inside the bounding box (7.0 7.0, 8.0 8.0).
+Example: All tests numbered 7xx are inside the bounding box (7.0 1.0, 8.0 2.0).
 
 Individual tests are inside those in a bounding box with 0.1 degree width and
 height. They are arranged in a 10x10 square. So test 700 is in
-(7.0 7.0, 7.1 7.1), 701 is in (7.1 7.0, 7.2 7.1), 710 is in (7.0 7.1, 7.1 7.2).
+(7.0 1.0, 7.1 1.1), 701 is in (7.1 1.0, 7.2 1.1), 710 is in (7.0 1.1, 7.1 1.2).
 
-A script `bin/create_grid.sh` is provided that generates a grid of "tiles"
-for those tests in spatialite format. The result can be used for instance as a
-background layer in a GIS program.
+A Spatialite file `grid.db` is provided that contains this grid for the existing
+test cases. It can be re-created by calling `make grid`.
 
 ## Label Nodes
 
-Interesting points in the data can be labled by adding an optional `labels.osm`
+Interesting points in the data can be labeled by adding an optional `labels.osm`
 file containing OSM nodes with a `label=*` tag. Test software is normally not
 required to read these, but they can be used when visualizing tests for instance.
+
+## QGIS Project File
+
+A QGIS project file is provided at `tests.qgs`.
 
 ## Creating Tests
 

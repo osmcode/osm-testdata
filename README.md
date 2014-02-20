@@ -4,20 +4,20 @@
 OpenStreetMap data can be quite complex and software using the data difficult
 to test. This git repository contains various pieces of OSM data to be used for
 testing OSM software. The data is collected at this one location to help all
-OSM software projects. Whether and how the tests are performed has to be
-decided by each project.
+OSM software projects. Each project still has to decide which tests to perform
+and how.
 
 ## The Test Grid
 
 The `grid` directory contains OSM data organized by test category into a "grid".
 The tests are organized cleanly so that they can be easily used from automated
-tests.
+tests. See that directory for more information.
 
 ## Other Tests
 
-Other tests that don't fit into the "grid" schema is currently collected in the
-`misc` directory. In the future these tests might be organized better, as they
-are, they are not really that useful for automated tests.
+Other tests that don't fit into the "grid" schema are currently collected in
+the `misc` directory. In the future these tests might be organized better. As
+they are now, they are not really that useful for automated tests.
 
 ## License
 
