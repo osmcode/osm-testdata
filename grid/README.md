@@ -38,9 +38,8 @@ Each test case is in its own directory. It contains the following files:
 OSM IDs in the tests are used as follows:
 
 All IDs start with the three-digit test number, for instance 711. Nodes are
-then numbered from 000, label nodes from 700, ways from 800 and relations from
-900. So there are enough IDs in each test for 700 nodes, 100 label nodes,
-100 ways, and 100 relations.
+then numbered from 000, ways from 800 and relations from 900. So there are
+enough IDs in each test for 800 nodes, 100 ways, and 100 relations.
 
 ## Geometries
 
