@@ -31,12 +31,12 @@ CREATE TABLE titles (
 SELECT AddGeometryColumn('titles', 'geom', 4326, 'LINESTRING', 2);
 
 CREATE TABLE nodes (
-    id INTEGER
+    id INTEGER NOT NULL PRIMARY KEY
 );
 SELECT AddGeometryColumn('nodes', 'geom', 4326, 'POINT', 2);
 
 CREATE TABLE ways (
-    id INTEGER
+    id INTEGER NOT NULL PRIMARY KEY
 );
 SELECT AddGeometryColumn('ways', 'geom', 4326, 'LINESTRING', 2);
 
