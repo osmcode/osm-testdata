@@ -6,9 +6,9 @@
         <units>degrees</units>
         <extent>
             <xmin>0.82500024999999999</xmin>
-            <ymin>-0.40415886986094296</ymin>
+            <ymin>-0.35415386986094277</ymin>
             <xmax>8.17498974999999994</xmax>
-            <ymax>3.40414886986094256</ymax>
+            <ymax>3.45415386986094308</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -29,17 +29,17 @@
         <legendgroup open="true" checked="Qt::Checked" name="Overview">
             <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="labels" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="labels20140218163052006" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="labels20140221110837046" visible="1"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="nodes" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="nodes20140218163052016" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="nodes20140221105814325" visible="1"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ways" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="ways20140218163052021" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="ways20140221105814338" visible="1"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
@@ -331,8 +331,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-            <id>labels20140218163052006</id>
-            <datasource>dbname='../../libosmium/test/osm-testdata/testdata-overview.db' table="labels" (GEOMETRY) sql=</datasource>
+            <id>labels20140221110837046</id>
+            <datasource>dbname='./grid.db' table="labels" (geom) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -526,7 +526,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="id"/>
                 <edittype labelontop="0" editable="1" type="0" name="label"/>
             </edittypes>
-            <editform>.</editform>
+            <editform></editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
             <annotationform>.</annotationform>
@@ -734,9 +734,9 @@
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-            <id>nodes20140218163052016</id>
-            <datasource>dbname='../../libosmium/test/osm-testdata/testdata-overview.db' table="nodes" (GEOMETRY) sql=</datasource>
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>nodes20140221105814325</id>
+            <datasource>dbname='./grid.db' table="nodes" (geom) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -803,8 +803,8 @@
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
-                <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="id"/>
+                <property key="labeling/enabled" value="false"/>
+                <property key="labeling/fieldName" value=""/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Sans"/>
@@ -813,7 +813,7 @@
                 <property key="labeling/fontLimitPixelSize" value="false"/>
                 <property key="labeling/fontMaxPixelSize" value="10000"/>
                 <property key="labeling/fontMinPixelSize" value="3"/>
-                <property key="labeling/fontSize" value="8"/>
+                <property key="labeling/fontSize" value="10"/>
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
                 <property key="labeling/fontStrikeout" value="false"/>
                 <property key="labeling/fontUnderline" value="false"/>
@@ -844,9 +844,9 @@
                 <property key="labeling/quadOffset" value="4"/>
                 <property key="labeling/reverseDirectionSymbol" value="false"/>
                 <property key="labeling/rightDirectionSymbol" value=">"/>
-                <property key="labeling/scaleMax" value="200000"/>
+                <property key="labeling/scaleMax" value="10000000"/>
                 <property key="labeling/scaleMin" value="1"/>
-                <property key="labeling/scaleVisibility" value="true"/>
+                <property key="labeling/scaleVisibility" value="false"/>
                 <property key="labeling/shadowBlendMode" value="6"/>
                 <property key="labeling/shadowColorB" value="0"/>
                 <property key="labeling/shadowColorG" value="0"/>
@@ -892,8 +892,8 @@
                 <property key="labeling/shapeType" value="0"/>
                 <property key="labeling/textColorA" value="255"/>
                 <property key="labeling/textColorB" value="0"/>
-                <property key="labeling/textColorG" value="85"/>
-                <property key="labeling/textColorR" value="170"/>
+                <property key="labeling/textColorG" value="0"/>
+                <property key="labeling/textColorR" value="0"/>
                 <property key="labeling/textTransp" value="0"/>
                 <property key="labeling/upsidedownLabels" value="0"/>
                 <property key="labeling/wrapChar" value=""/>
@@ -903,7 +903,7 @@
             <blendMode>0</blendMode>
             <featureBlendMode>0</featureBlendMode>
             <layerTransparency>0</layerTransparency>
-            <displayfield>OGC_FID</displayfield>
+            <displayfield>id</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -926,7 +926,6 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="0" name="OGC_FID"/>
                 <edittype labelontop="0" editable="1" type="0" name="id"/>
             </edittypes>
             <editform>.</editform>
@@ -1140,8 +1139,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="1000" maximumScale="1.5e+06" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-            <id>ways20140218163052021</id>
-            <datasource>dbname='../../libosmium/test/osm-testdata/testdata-overview.db' table="ways" (GEOMETRY) sql=</datasource>
+            <id>ways20140221105814338</id>
+            <datasource>dbname='./grid.db' table="ways" (geom) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -1161,7 +1160,7 @@
                 </spatialrefsys>
             </srs>
             <provider encoding="System">spatialite</provider>
-            <previewExpression></previewExpression>
+            <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>

@@ -25,7 +25,7 @@ each other.
 Each test case is in its own directory. It contains the following files:
 
 * `data.osm` - the test data itself
-* `labels.osm` - labels for documentation of test cases in OSM format
+* `labels.wkt` - labels for documentation of test cases
 * `README` - description of the test
 * `result` - contains either the word "valid" or "invalid" to signify
   whether the data in the file is valid, ie it must be parseable by any OSM
@@ -59,9 +59,12 @@ test cases. It can be re-created by calling `make grid`.
 
 ## Label Nodes
 
-Interesting points in the data can be labeled by adding an optional `labels.osm`
-file containing OSM nodes with a `label=*` tag. Test software is normally not
-required to read these, but they can be used when visualizing tests for instance.
+Interesting points in the data can be labeled by adding an optional
+`labels.wkt` file containing a point in WKT format and a label. Test software
+is not required to read these, but they can be used when visualizing tests for
+instance. Format example:
+
+`POINT(1.2 4.3) This is an important point`
 
 ## QGIS Project File
 

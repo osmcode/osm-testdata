@@ -30,6 +30,21 @@ CREATE TABLE titles (
 );
 SELECT AddGeometryColumn('titles', 'geom', 4326, 'LINESTRING', 2);
 
+CREATE TABLE nodes (
+    id INTEGER
+);
+SELECT AddGeometryColumn('nodes', 'geom', 4326, 'POINT', 2);
+
+CREATE TABLE ways (
+    id INTEGER
+);
+SELECT AddGeometryColumn('ways', 'geom', 4326, 'LINESTRING', 2);
+
+CREATE TABLE labels (
+    label VARCHAR
+);
+SELECT AddGeometryColumn('labels', 'geom', 4326, 'POINT', 2);
+
 EOF
 
 for t in $*; do

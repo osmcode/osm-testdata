@@ -1,2 +1,5 @@
 tests.qgs~
 grid.sql
+data-nodes.sql
+data-ways.sql
+labels.sql
