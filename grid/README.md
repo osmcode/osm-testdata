@@ -25,7 +25,7 @@ each other.
 Each test case is in its own directory. It contains the following files:
 
 * `data.osm` - the test data itself
-* `labels.wkt` - labels for documentation of test cases
+* `labels.wkt` (optional) - labels for documentation of test cases
 * `description.txt` - description of the test
 * `result` - contains either the word "valid" or "invalid" to signify
   whether the data in the file is valid, ie it must be parseable by any OSM
@@ -43,18 +43,15 @@ enough IDs in each test for 800 nodes, 100 ways, and 100 relations.
 
 ## Geometries
 
-Node coordinates of one test category are always inside a bounding box with one
-degree width and height. The position of the bounding box is given by the test
-number.
+Node coordinates for all tests in one test category are always inside a
+bounding box with one degree width and height. The position of the bounding box
+is given by the test number.
 
 Example: All tests numbered 7xx are inside the bounding box (7.0 1.0, 8.0 2.0).
 
 Individual tests are inside those in a bounding box with 0.1 degree width and
 height. They are arranged in a 10x10 square. So test 700 is in
 (7.0 1.0, 7.1 1.1), 701 is in (7.1 1.0, 7.2 1.1), 710 is in (7.0 1.1, 7.1 1.2).
-
-A Spatialite file `grid.db` is provided that contains this grid for the existing
-test cases. It can be re-created by calling `make grid`.
 
 ## Label Nodes
 
@@ -65,9 +62,17 @@ instance. Format example:
 
 `POINT(1.2 4.3) This is an important point`
 
+## Spatialite Database
+
+A Spatialite file `grid.db` is provided that contains this grid for the existing
+test cases, test title, labels from `labels.wkt` files and all nodes and
+ways from the `out.wkt` files.
+
+It can be re-created by calling `make grid`.
+
 ## QGIS Project File
 
-A QGIS project file is provided at `tests.qgs`.
+A QGIS project file is provided at `tests.qgs`. It shows the data from `grid.db`.
 
 ## Creating Tests
 
@@ -82,7 +87,7 @@ The easiest way is probably something like this:
 * create directory for new test
 * copy over `data.osm` from another test, globally search-and-replace test id
 * add nodes, ways, relations as needed
-* add `description.txt` and `result` files
+* add `description.txt`, `out.wkt` and `result` files
 
 ## License
 
