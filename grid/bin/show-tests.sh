@@ -12,10 +12,10 @@ for t in $tests; do
     cat_name_test_id=${t#*-}
     cat_name=${cat_name_test_id%/*}
     test_id=${t#*/}
-    if [ -f data/$t/README ]; then
-        description=`cat data/$t/README`
+    if [ -f data/$t/description.txt ]; then
+        description=`cat data/$t/description.txt`
     else
-        description="NO README"
+        description="NO DESCRIPTION"
     fi
     if [ -f data/$t/result ]; then
         result=`cat data/$t/result`

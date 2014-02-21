@@ -59,8 +59,8 @@ for t in $*; do
                 else
                     result=""
                 fi
-                if [ -f data/$t-*/$t$y$x/README ]; then
-                    description=`cat data/$t-*/$t$y$x/README`
+                if [ -f data/$t-*/$t$y$x/description.txt ]; then
+                    description=`cat data/$t-*/$t$y$x/description.txt`
                 else
                     description=""
                 fi

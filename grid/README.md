@@ -26,7 +26,7 @@ Each test case is in its own directory. It contains the following files:
 
 * `data.osm` - the test data itself
 * `labels.wkt` - labels for documentation of test cases
-* `README` - description of the test
+* `description.txt` - description of the test
 * `result` - contains either the word "valid" or "invalid" to signify
   whether the data in the file is valid, ie it must be parseable by any OSM
   software, or invalid, in which case the handling of the data is unspecified.
@@ -82,7 +82,7 @@ The easiest way is probably something like this:
 * create directory for new test
 * copy over `data.osm` from another test, globally search-and-replace test id
 * add nodes, ways, relations as needed
-* add `README` and `result` files
+* add `description.txt` and `result` files
 
 ## License
 
