@@ -1,5 +1,6 @@
-tests.qgs~
-grid.sql
+data-labels.sql
+data-multipolygons.sql
 data-nodes.sql
 data-ways.sql
-labels.sql
+grid.sql
+tests.qgs~

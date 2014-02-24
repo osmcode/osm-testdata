@@ -10,43 +10,6 @@
 #  bin/create-grid.sh 1 7
 #
 
-cat << EOF
---
---  Automatically created with create-grid.sh
---
-
-PRAGMA synchronous = OFF;
-
-CREATE TABLE grid (
-    test_id     INTEGER NOT NULL PRIMARY KEY,
-    available   INTEGER,
-    result      VARCHAR,
-    description VARCHAR
-);
-SELECT AddGeometryColumn('grid', 'geom', 4326, 'POLYGON', 2);
-
-CREATE TABLE titles (
-    title       VARCHAR
-);
-SELECT AddGeometryColumn('titles', 'geom', 4326, 'LINESTRING', 2);
-
-CREATE TABLE nodes (
-    id INTEGER NOT NULL PRIMARY KEY
-);
-SELECT AddGeometryColumn('nodes', 'geom', 4326, 'POINT', 2);
-
-CREATE TABLE ways (
-    id INTEGER NOT NULL PRIMARY KEY
-);
-SELECT AddGeometryColumn('ways', 'geom', 4326, 'LINESTRING', 2);
-
-CREATE TABLE labels (
-    label VARCHAR
-);
-SELECT AddGeometryColumn('labels', 'geom', 4326, 'POINT', 2);
-
-EOF
-
 for t in $*; do
     title=`echo data/$t-* | cut -d/ -f2`
     echo "INSERT INTO titles (title, geom) VALUES ('${title}', LineFromText('LINESTRING(${t}.0 2.1,${t}.9999 2.1)', 4326));\n"
