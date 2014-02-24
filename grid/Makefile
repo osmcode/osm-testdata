@@ -13,13 +13,13 @@ grid: grid.db
 grid.sql: data/?-* bin/create-grid.sh
 	bin/create-grid.sh `find data -mindepth 1 -maxdepth 1 -type d | cut -d/ -f2 | cut -d- -f1 | sort` >$@
 
-data-nodes.sql: data/*/*/out.wkt
-	grep --no-filename POINT $^ | sed -re "s/^([0-9][0-9][0-9])([0-9][0-9][0-9]) (.*)/INSERT INTO nodes (test_id, id, geom) VALUES (\1, \1\2, PointFromText('\3', 4326));/" >$@
+data-nodes.sql: data/*/*/nodes.wkt
+	cat $^ | sed -re "s/^([0-9][0-9][0-9])([0-9][0-9][0-9]) (.*)/INSERT INTO nodes (test_id, id, geom) VALUES (\1, \1\2, PointFromText('\3', 4326));/" >$@
 
-data-ways.sql: data/*/*/out.wkt
-	grep --no-filename LINESTRING $^ | sed -re "s/^([0-9][0-9][0-9])([0-9][0-9][0-9]) (.*)/INSERT INTO ways (test_id, id, geom) VALUES (\1, \1\2, LineFromText('\3', 4326));/" >$@
+data-ways.sql: data/*/*/ways.wkt
+	cat $^ | sed -re "s/^([0-9][0-9][0-9])([0-9][0-9][0-9]) (.*)/INSERT INTO ways (test_id, id, geom) VALUES (\1, \1\2, LineFromText('\3', 4326));/" >$@
 
-data-multipolygons.sql: data/*/*/multipolygon.wkt
+data-multipolygons.sql: data/*/*/multipolygons.wkt
 	cat $^ | sed -re "s/^([0-9][0-9][0-9])([0-9][0-9][0-9]) ([wr]) ([^ ]*) (.*)/INSERT INTO multipolygons (test_id, id, from_type, variant, geom) VALUES (\1, \1\2, '\3', '\4', MultiPolygonFromText('\5', 4326));/" >$@
 
 data-labels.sql: data/*/*/labels.wkt
@@ -38,5 +38,5 @@ show:
 	bin/show-tests.sh
 
 clean:
-	rm -f grid.db $(SQL_FILES) data/all.osm
+	rm -f grid.db $(SQL_FILES) data/all.osm tests.qgs~
 

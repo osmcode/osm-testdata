@@ -25,13 +25,15 @@ each other.
 Each test case is in its own directory. It contains the following files:
 
 * `data.osm` - the test data itself
-* `labels.wkt` (optional) - labels for documentation of test cases
 * `description.txt` - description of the test
 * `result` - contains either the word "valid" or "invalid" to signify
   whether the data in the file is valid, ie it must be parseable by any OSM
   software, or invalid, in which case the handling of the data is unspecified.
-* `out.wkt` (optional) - geometry of all nodes and ways in data.osm in WKT
-  format
+* `nodes.wkt` (optional) - geometry of all nodes in data.osm in WKT format
+* `ways.wkt` (optional) - geometry of all ways in data.osm in WKT format
+* `multipolygons.wkt` (optional) - geometry of all multipolygons that can be
+  generated from data.osm in WKT format
+* `labels.wkt` (optional) - labels for documentation of test cases
 
 ## ID Space Used
 
