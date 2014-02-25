@@ -4,7 +4,7 @@ OSMIUM := ../../osmium-tool/osmium
 
 SQL_FILES := grid.sql data-nodes.sql data-ways.sql data-multipolygons.sql data-labels.sql
 
-.PHONY: grid data all clean
+.PHONY: grid data all clean show create-wkt
 
 all: grid data
 
@@ -36,6 +36,9 @@ data/all.osm: data/*/*/data.osm
 
 show:
 	bin/show-tests.sh
+
+create-wkt:
+	bin/create-wkt.sh
 
 clean:
 	rm -f grid.db $(SQL_FILES) data/all.osm tests.qgs~
