@@ -55,6 +55,15 @@ Individual tests are inside those in a bounding box with 0.1 degree width and
 height. They are arranged in a 10x10 square. So test 700 is in
 (7.0 1.0, 7.1 1.1), 701 is in (7.1 1.0, 7.2 1.1), 710 is in (7.0 1.1, 7.1 1.2).
 
+## WKT Files
+
+Each test case can contain its nodes, ways, and multipolygons in WKT format.
+To generate the `nodes.wkt` and `ways.wkt` files, run `make create-wkt`. This
+will read the `data.osm` files and create the WKT files. Note that the output
+may not be correct so you should check those files!
+
+The `multipolygons.wkt` file has to be created manually.
+
 ## Label Nodes
 
 Interesting points in the data can be labeled by adding an optional
@@ -67,8 +76,9 @@ instance. Format example:
 ## Spatialite Database
 
 A Spatialite file `grid.db` is provided that contains this grid for the existing
-test cases, test title, labels from `labels.wkt` files and all nodes and
-ways from the `out.wkt` files.
+test cases, test title, labels from `labels.wkt` files and all nodes, ways, and
+multipolygons from the `nodes.wkt`, `ways.wkt`, and `multipolygons.wkt` files,
+respectively.
 
 It can be re-created by calling `make grid`.
 
