@@ -1,1 +1,0 @@
-Invalid multipolygon because ring crosses itself

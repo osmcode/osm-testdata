@@ -1,8 +1,8 @@
 
 # Test Grid
 
-This git repository contains OSM data files with valid and invalid data. It can
-be used to test any OSM software.
+This directory contains syntactically valid OSM data files with semantically
+valid and invalid objects. It can be used to test any OSM software.
 
 ## Organization of the Test Files
 
@@ -10,15 +10,18 @@ All test data is in the `data` directory. In it you'll find subdirectories for
 different categories of tests. Below them there is a numbered directory for each
 test.
 
-Test data from different tests use different ID spaces and distinct geographic
+Test data from different tests uses different ID spaces and distinct geographic
 areas. So when tests are used together their data must never interfere with
 each other.
 
 ## Test Categories
 
-* 1 - Basic geometries
-* 3 - Attributes
-* 7 - Multipolygon geometries
+Currently there are the following test categories, more will be added in the
+future.
+
+* 1 - Basic Geometry Tests
+* 3 - Attribute Tests
+* 7 - Multipolygon Geometry Tests
 
 ## Test Cases
 
@@ -39,9 +42,10 @@ Each test case is in its own directory. It contains the following files:
 
 OSM IDs in the tests are used as follows:
 
-All IDs start with the three-digit test number, for instance 711. Nodes are
-then numbered from 000, ways from 800 and relations from 900. So there are
-enough IDs in each test for 800 nodes, 100 ways, and 100 relations.
+All IDs start with the three-digit test number, for instance 711 and end with
+the three-digit object ID. Nodes are numbered from 000, ways from 800 and
+relations from 900. So there are enough IDs in each test for 800 nodes, 100
+ways, and 100 relations.
 
 ## Geometries
 
@@ -62,7 +66,20 @@ To generate the `nodes.wkt` and `ways.wkt` files, run `make create-wkt`. This
 will read the `data.osm` files and create the WKT files. Note that the output
 may not be correct so you should check those files!
 
-The `multipolygons.wkt` file has to be created manually.
+The `multipolygons.wkt` file has to be created manually. It can contain several
+lines with the following format:
+
+    <id> <type> <variant> <wkt>
+
+The `id` is the id of the way or relation this multipolygon was created from.
+The `type` is either "w" or "r" depending of whether the multipolygon was
+created from a way or relation. `wkt` is the geometry in WKT format or, if the
+geometry is invalid the string "INVALID". The `variant` can be used to allow
+several different results from the same data. Usually there is only one result
+called "default". But sometimes invalid data can be interpreted in several ways.
+Typically the "default" result will be "INVALID", but there could be a result
+tagged "fix" that shows a geometry a clever algorithm could come up with that
+tries to fix bad data.
 
 ## Label Nodes
 
@@ -98,8 +115,8 @@ The easiest way is probably something like this:
 * number all used grid lines on x and y axis
 * create directory for new test
 * copy over `data.osm` from another test, globally search-and-replace test id
-* add nodes, ways, relations as needed
-* add `description.txt`, `out.wkt` and `result` files
+* add/edit nodes, ways, relations as needed
+* add `description.txt`, `result`, and wkt files
 
 ## License
 

@@ -1,1 +1,0 @@
-degenerate case: a line only

@@ -1,0 +1,1 @@
+Empty username on node should not happen

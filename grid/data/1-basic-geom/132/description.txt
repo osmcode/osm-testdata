@@ -1,1 +1,0 @@
-Crossing ways without common node, but crossing node at same position

@@ -1,0 +1,1 @@
+Valid multipolygon with one outer and three inner rings with correct roles.

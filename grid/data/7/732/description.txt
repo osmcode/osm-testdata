@@ -1,0 +1,1 @@
+Valid multipolygon with two outer rings, one containing an inner.

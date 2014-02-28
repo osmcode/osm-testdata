@@ -1,1 +1,0 @@
-valid multipolygon with second outer ring in inner ring

@@ -1,1 +1,0 @@
-Vaild multipolygon relation with three ways making up an outer ring in the form of a cross.

@@ -10,7 +10,7 @@ all: grid data
 
 grid: grid.db
 
-grid.sql: data/?-* bin/create-grid.sh
+grid.sql: data/? bin/create-grid.sh
 	bin/create-grid.sh `find data -mindepth 1 -maxdepth 1 -type d | cut -d/ -f2 | cut -d- -f1 | sort` >$@
 
 data-nodes.sql: data/*/*/nodes.wkt
@@ -44,5 +44,5 @@ create-wkt:
 	bin/create-wkt.sh
 
 clean:
-	rm -f grid.db $(SQL_FILES) data/all.osm tests.qgs~
+	rm -f grid.db $(SQL_FILES) data-multipolygons.wkt data/all.osm tests.qgs~
 

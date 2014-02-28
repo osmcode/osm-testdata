@@ -1,1 +1,0 @@
-invalid mutlipolygon because of a "spike"

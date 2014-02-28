@@ -1,0 +1,1 @@
+Way with three nodes, first two nodes have the same position

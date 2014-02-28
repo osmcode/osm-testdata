@@ -1,1 +1,0 @@
-Vaild multipolygon relation with three ways making up an outer ring. Contains concave and convex parts.

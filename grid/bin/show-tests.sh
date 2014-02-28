@@ -8,9 +8,7 @@ set -e
 tests=`find data -mindepth 2 -maxdepth 2 -type d | sed -s 's/data\///' | sort`
 
 for t in $tests; do
-    cat_no=${t%%-*}
-    cat_name_test_id=${t#*-}
-    cat_name=${cat_name_test_id%/*}
+    cat_no=${t%%/*}
     test_id=${t#*/}
     if [ -f data/$t/description.txt ]; then
         description=`cat data/$t/description.txt`
@@ -22,6 +20,6 @@ for t in $tests; do
     else
         result="UNKNOWN RESULT"
     fi
-    echo "$cat_no $cat_name\t$test_id\t$result\t$description"
+    printf "%1s %3s %-7s %s\n" $cat_no $test_id $result "$description"
 done
 

@@ -1,1 +1,0 @@
-No uid and no user name means user is anonymous

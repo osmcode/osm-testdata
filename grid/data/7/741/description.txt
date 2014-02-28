@@ -1,0 +1,1 @@
+Invalid multipolygon with a line only as "outer ring".

@@ -1,1 +1,0 @@
-Vaild multipolygon relation with three ways making up two outer rings that touch in one point.

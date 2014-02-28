@@ -1,0 +1,1 @@
+Valid complex multipolygon with one outer and two inner rings made up of several ways. Roles are tagged correctly.
