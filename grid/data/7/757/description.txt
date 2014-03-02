@@ -1,0 +1,1 @@
+Inner ring touches outer ring in line using common nodes.

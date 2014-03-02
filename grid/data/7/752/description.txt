@@ -1,0 +1,1 @@
+Touching inner without common nodes.
