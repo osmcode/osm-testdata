@@ -7,7 +7,7 @@
 #  THIS SCRIPT MIGHT NOT ALWAYS DO THE RIGHT THING!
 #
 
-for t in data/*/*; do
+for t in data/?/???; do
     xsltproc bin/osm2nodes_wkt.xsl $t/data.osm >$t/nodes.wkt
 
     if [ ! -s $t/nodes.wkt ]; then
