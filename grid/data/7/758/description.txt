@@ -1,0 +1,1 @@
+Inner touching outer in single node.
