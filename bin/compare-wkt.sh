@@ -22,11 +22,11 @@ set -e
 WKT1=$1
 WKT2=$2
 
-#OK="OK"
-#ERR="ERR"
+OK="OK"
+ERR="ERR"
 
-OK="\033[1;32mOK\033[0m"
-ERR="\033[1;31mERR\033[0m"
+#OK="\033[1;32mOK\033[0m"
+#ERR="\033[1;31mERR\033[0m"
 
 if [ "$WKT1" = "$WKT2" ]; then
     echo "$OK  (identical)"
