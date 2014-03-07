@@ -13,6 +13,10 @@ The `grid` directory contains OSM data organized by test category into a "grid".
 The tests are organized cleanly so that they can be easily used from automated
 tests. See that directory for more information.
 
+## XML Tests
+
+The `xml` directory contains OSM files to test OSM XML file parsers with.
+
 ## Other Tests
 
 Other tests that don't fit into the "grid" schema are currently collected in
