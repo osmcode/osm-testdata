@@ -1,0 +1,1 @@
+Multipolygon with one outern ring and two touching inner rings, one from way with empty role, one from way with role "outer".
