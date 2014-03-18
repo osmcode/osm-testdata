@@ -49,5 +49,5 @@ create-wkt:
 	bin/create-wkt.sh
 
 clean:
-	rm -f grid.db $(SQL_FILES) data-multipolygons.wkt data/all.osm tests.qgs~
+	rm -f grid.db $(SQL_FILES) data-files.xml data-multipolygons.wkt data/all.osm tests.qgs~
 
