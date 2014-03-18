@@ -34,8 +34,13 @@ grid.db: setup.sql $(SQL_FILES)
 
 data: data/all.osm
 
-data/all.osm: data/*/*/data.osm
-	$(OSMIUM) cat data/*/*/*.osm --overwrite --generator=testdata --output-header=xml_josm_upload=false --output=data/all.osm
+data-files.xml: data/*/*/data.osm
+	echo '<?xml version="1.0" encoding="utf-8"?><files>' >$@
+	find data -name data.osm | sort | sed -e 's/^/<file name="/' -e 's/$$/"\/>/' >>$@
+	echo "</files>" >>$@
+
+data/all.osm: data/*/*/data.osm data-files.xml
+	xsltproc --output $@ bin/concat.xsl data-files.xml
 
 show:
 	bin/show-tests.sh
