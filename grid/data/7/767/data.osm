@@ -24,5 +24,6 @@
         <nd ref="767000"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="767"/>
+        <tag k="area" v="yes"/>
     </way>
 </osm>

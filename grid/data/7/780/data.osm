@@ -13,5 +13,6 @@
         <nd ref="780004"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="780"/>
+        <tag k="area" v="yes"/>
     </way>
 </osm>
