@@ -1,0 +1,1 @@
+Multipolygon with correct outer ring, but inner ring made up out of two ways where locations match but not node ids.
