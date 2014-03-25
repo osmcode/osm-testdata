@@ -1,7 +1,6 @@
 data-files.xml
 data-labels.sql
 data-multipolygons.sql
-data-multipolygons.wkt
 data-nodes.sql
 data-ways.sql
 grid.sql
