@@ -1,0 +1,1 @@
+Multipolygon with one outer and one inner ring, tags on relation, extra tags on inner ring.

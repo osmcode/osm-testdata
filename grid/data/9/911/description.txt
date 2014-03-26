@@ -1,0 +1,1 @@
+Building with one outer ring, tags on way and not on relation.
