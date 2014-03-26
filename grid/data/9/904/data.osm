@@ -16,7 +16,7 @@
         <nd ref="904002"/>
         <nd ref="904003"/>
         <nd ref="904000"/>
-        <tag k="test:section" v="mp-geom"/>
+        <tag k="test:section" v="mp-tags"/>
         <tag k="test:id" v="904"/>
     </way>
 
@@ -24,14 +24,14 @@
         <nd ref="904004"/>
         <nd ref="904005"/>
         <nd ref="904006"/>
-        <tag k="test:section" v="mp-geom"/>
+        <tag k="test:section" v="mp-tags"/>
         <tag k="test:id" v="904"/>
     </way>
     <way id="904802" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <nd ref="904006"/>
         <nd ref="904007"/>
         <nd ref="904004"/>
-        <tag k="test:section" v="mp-geom"/>
+        <tag k="test:section" v="mp-tags"/>
         <tag k="test:id" v="904"/>
     </way>
 
@@ -40,7 +40,7 @@
         <member type="way" ref="904801" role="outer"/>
         <member type="way" ref="904802" role="outer"/>
         <tag k="type" v="multipolygon"/>
-        <tag k="test:section" v="mp-geom"/>
+        <tag k="test:section" v="mp-tags"/>
         <tag k="test:id" v="904"/>
     </relation>
 </osm>
