@@ -1,0 +1,14 @@
+{
+    "test_id": 904,
+    "description": "Multipolygon with one outer and one inner ring, both tagged as 'outer'.",
+    "areas": [{
+        "variant": "default",
+        "from_id": 904900,
+        "from_type": "relation",
+        "wkt": "MULTIPOLYGON(((9.41 1.01,9.41 1.09,9.49 1.09,9.49 1.01,9.41 1.01),(9.43 1.03,9.43 1.07,9.47 1.07,9.47 1.03,9.43 1.03)))",
+        "tags": {
+            "test:section": "mp-tags",
+            "test:id": "904"
+        }
+    }]
+}

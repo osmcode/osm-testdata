@@ -1,0 +1,6 @@
+{
+    "test_id": 913,
+    "description": "Multipolygon with one outer ring, no tags on relation, different tags on ways making up outer ring.",
+    "areas": [
+    ]
+}

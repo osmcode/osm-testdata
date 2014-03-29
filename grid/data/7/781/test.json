@@ -1,0 +1,22 @@
+{
+    "test_id": 781,
+    "description": "Multipolygon with one outer ring from single way that has different end-nodes, but they have same location.",
+    "areas": [
+    {
+        "variant": "default",
+        "from_id": 781900,
+        "from_type": "relation",
+        "wkt": "INVALID"
+    },
+    {
+        "variant": "location",
+        "from_id": 781900,
+        "from_type": "relation",
+        "wkt": "MULTIPOLYGON(((7.15 1.85,7.15 1.81,7.11 1.81,7.11 1.85,7.15 1.85)))",
+        "tags": {
+            "test:section": "mp-geom",
+            "test:id": "781"
+        }
+    }
+    ]
+}

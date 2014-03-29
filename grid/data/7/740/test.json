@@ -1,0 +1,10 @@
+{
+    "test_id": 740,
+    "description": "Invalid multipolygon because the outer ring crosses itself.",
+    "areas": [{
+        "variant": "default",
+        "from_id": 740900,
+        "from_type": "relation",
+        "wkt": "INVALID"
+    }]
+}

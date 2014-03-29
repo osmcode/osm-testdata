@@ -32,12 +32,15 @@ grid.db: setup.sql $(SQL_FILES)
 	rm -f $@
 	cat $^ | spatialite -batch -bail $@
 
-data: data/all.osm
+data: data/all.osm data/tests.json
 
 data-files.xml: data/*/*/data.osm
 	echo '<?xml version="1.0" encoding="utf-8"?><files>' >$@
 	find data -name data.osm | sort | sed -e 's/^/<file name="/' -e 's/$$/"\/>/' >>$@
 	echo "</files>" >>$@
+
+data/tests.json: data/*/*/test.json
+	../bin/concat-test-json.rb $^ >$@
 
 data/all.osm: data/*/*/data.osm data-files.xml
 	xsltproc --output $@ bin/concat.xsl data-files.xml

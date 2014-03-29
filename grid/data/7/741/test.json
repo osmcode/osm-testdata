@@ -1,0 +1,10 @@
+{
+    "test_id": 741,
+    "description": "Invalid multipolygon with a line only as 'outer ring'.",
+    "areas": [{
+        "variant": "default",
+        "from_id": 741900,
+        "from_type": "relation",
+        "wkt": "INVALID"
+    }]
+}
