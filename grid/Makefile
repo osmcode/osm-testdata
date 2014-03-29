@@ -19,11 +19,8 @@ data-nodes.sql: data/*/*/nodes.wkt
 data-ways.sql: data/*/*/ways.wkt
 	cat $^ | sed -re "s/^([0-9][0-9][0-9])([0-9][0-9][0-9]) (.*)/INSERT INTO ways (test_id, id, geom) VALUES (\1, \1\2, LineFromText('\3', 4326));/" >$@
 
-data-multipolygons.wkt: data/*/*/multipolygons.wkt
-	cat $^ >$@
-
-data-multipolygons.sql: data-multipolygons.wkt
-	sed -re "s/^([0-9][0-9][0-9])([0-9][0-9][0-9]) ([wr]) ([^ ]*) (.*)/INSERT INTO multipolygons (test_id, id, from_type, variant, geom) VALUES (\1, \1\2, '\3', '\4', MultiPolygonFromText('\5', 4326));/" <$< >$@
+data-multipolygons.sql: data/tests.json
+	bin/create-sql-for-multipolygons.rb $< >$@
 
 data-labels.sql: data/*/*/labels.wkt
 	cat $^ | sed -re "s/^(POINT\([0-9. ]+\)) (.*)/INSERT INTO labels (label, geom) VALUES ('\2', PointFromText('\1', 4326));/" >$@
@@ -52,5 +49,5 @@ create-wkt:
 	bin/create-wkt.sh
 
 clean:
-	rm -f grid.db $(SQL_FILES) data-files.xml data-multipolygons.wkt data/all.osm tests.qgs~
+	rm -f grid.db $(SQL_FILES) data-files.xml data/all.osm data/tests.json tests.qgs~
 

@@ -1150,7 +1150,16 @@
     "test_id": 913,
     "description": "Multipolygon with one outer ring, no tags on relation, different tags on ways making up outer ring.",
     "areas": [
-
+      {
+        "variant": "default",
+        "from_id": 913900,
+        "from_type": "relation",
+        "wkt": "MULTIPOLYGON(((9.31 1.11,9.31 1.19,9.39 1.19,9.39 1.11,9.31 1.11)))",
+        "tags": {
+          "test:section": "mp-tags",
+          "test:id": "913"
+        }
+      }
     ]
   },
   {
@@ -1189,7 +1198,7 @@
   },
   {
     "test_id": 922,
-    "description": "Multipolygon with one outer and one inner ring, tags on relation, extra tags on inner ring.",
+    "description": "Multipolygon with one outer and one inner ring, tags on relation, extra tags on inner ring made from a single way.",
     "areas": [
       {
         "variant": "default",
@@ -1199,25 +1208,25 @@
         "tags": {
           "test:section": "mp-tags",
           "test:id": "922",
-          "building": "yes"
+          "natural": "wood"
         }
       },
       {
         "variant": "default",
-        "from_id": 922900,
-        "from_type": "relation",
+        "from_id": 922801,
+        "from_type": "way",
         "wkt": "MULTIPOLYGON(((9.23 1.23,9.23 1.27,9.27 1.27,9.27 1.23,9.23 1.23)))",
         "tags": {
           "test:section": "mp-tags",
           "test:id": "922",
-          "building": "yes"
+          "natural": "water"
         }
       }
     ]
   },
   {
     "test_id": 923,
-    "description": "Multipolygon with one outer and one inner ring, tags on outer way, extra tags on inner ring.",
+    "description": "Multipolygon with one outer and one inner ring, tags on outer way, extra tags on inner ring made from singe way.",
     "areas": [
       {
         "variant": "default",
@@ -1227,18 +1236,52 @@
         "tags": {
           "test:section": "mp-tags",
           "test:id": "923",
-          "building": "yes"
+          "natural": "wood"
         }
       },
       {
         "variant": "default",
-        "from_id": 923900,
-        "from_type": "relation",
+        "from_id": 923801,
+        "from_type": "way",
         "wkt": "MULTIPOLYGON(((9.33 1.23,9.33 1.27,9.37 1.27,9.37 1.23,9.33 1.23)))",
         "tags": {
           "test:section": "mp-tags",
           "test:id": "923",
-          "building": "yes"
+          "natural": "water"
+        }
+      }
+    ]
+  },
+  {
+    "test_id": 924,
+    "description": "Multipolygon with one outer and one inner ring, tags on relation, extra tags on inner ring made from multiple rings.",
+    "areas": [
+      {
+        "variant": "default",
+        "from_id": 924900,
+        "from_type": "relation",
+        "wkt": "MULTIPOLYGON(((9.41 1.21,9.41 1.29,9.49 1.29,9.49 1.21,9.41 1.21),(9.43 1.23,9.43 1.27,9.47 1.27,9.47 1.23,9.43 1.23)))",
+        "tags": {
+          "test:section": "mp-tags",
+          "test:id": "924",
+          "natural": "wood"
+        }
+      }
+    ]
+  },
+  {
+    "test_id": 925,
+    "description": "Multipolygon with one outer and one inner ring, tags on outer way, extra tags on inner ring made from multiple rings.",
+    "areas": [
+      {
+        "variant": "default",
+        "from_id": 925900,
+        "from_type": "relation",
+        "wkt": "MULTIPOLYGON(((9.51 1.21,9.51 1.29,9.59 1.29,9.59 1.21,9.51 1.21),(9.53 1.23,9.53 1.27,9.57 1.27,9.57 1.23,9.53 1.23)))",
+        "tags": {
+          "test:section": "mp-tags",
+          "test:id": "925",
+          "natural": "wood"
         }
       }
     ]
@@ -1255,7 +1298,7 @@
         "tags": {
           "test:section": "mp-tags",
           "test:id": "930",
-          "building": "yes"
+          "natural": "wood"
         }
       }
     ]
@@ -1272,7 +1315,64 @@
         "tags": {
           "test:section": "mp-tags",
           "test:id": "931",
-          "building": "yes"
+          "natural": "wood"
+        }
+      }
+    ]
+  },
+  {
+    "test_id": 940,
+    "description": "Multipolygon with touching inner rings that are tagged themselves.",
+    "areas": [
+      {
+        "variant": "default",
+        "from_id": 940900,
+        "from_type": "relation",
+        "wkt": "MULTIPOLYGON(((9.01 1.41,9.01 1.47,9.06 1.47,9.06 1.41,9.01 1.41),(9.02 1.42,9.02 1.45,9.04 1.45,9.05 1.45,9.05 1.42,9.03 1.42,9.02 1.42)))",
+        "tags": {
+          "landuse": "forest",
+          "test:section": "mp-geom",
+          "test:id": "940"
+        }
+      },
+      {
+        "variant": "default",
+        "from_id": 940801,
+        "from_type": "way",
+        "wkt": "MULTIPOLYGON(((9.02 1.42,9.02 1.45,9.04 1.45,9.04 1.44,9.03 1.44,9.03 1.42,9.02 1.42)))",
+        "tags": {
+          "landuse": "grass",
+          "test:section": "mp-geom",
+          "test:id": "940"
+        }
+      },
+      {
+        "variant": "default",
+        "from_id": 940802,
+        "from_type": "way",
+        "wkt": "MULTIPOLYGON(((9.03 1.42,9.03 1.44,9.04 1.44,9.04 1.45,9.05 1.45,9.05 1.42,9.03 1.42)))",
+        "tags": {
+          "natural": "water",
+          "test:section": "mp-geom",
+          "test:id": "940"
+        }
+      }
+    ]
+  },
+  {
+    "test_id": 950,
+    "description": "Multipolygon with one outer and one inner ring, tags on relation, type boundary.",
+    "areas": [
+      {
+        "variant": "default",
+        "from_id": 950900,
+        "from_type": "relation",
+        "wkt": "MULTIPOLYGON(((9.01 1.51,9.01 1.59,9.09 1.59,9.09 1.51,9.01 1.51),(9.03 1.53,9.03 1.57,9.07 1.57,9.07 1.53,9.03 1.53)))",
+        "tags": {
+          "test:section": "mp-tags",
+          "test:id": "950",
+          "boundary": "administrative",
+          "admin_level": "2"
         }
       }
     ]

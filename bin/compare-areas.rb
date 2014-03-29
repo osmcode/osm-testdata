@@ -83,7 +83,8 @@ def compare_area(ref, t)
         result.chomp!
         (tags_okay, tags_detail) = compare_tags(area[:tags], t[:tags])
 
-        if result =~ / OK$/ and tags_okay
+        if result =~ / OK$/ and tags_okay and !area[:used]
+            area[:used] = true
             okay = true
         end
 
@@ -103,11 +104,18 @@ reference_data.each do |ref|
 
     if !td
         STDERR.puts "Missing test data for test id #{ref[:id]}\n"
+        exit 1
     end
 
-    t = td[0] # XXX
-
-    (okay, details) = compare_area(ref, t)
+    okay = true
+    details = ''
+    td.each do |t|
+        (o, d) = compare_area(ref, t)
+        if ! o
+            okay = false
+        end
+        details += d
+    end
 
     puts " \033[1;#{ okay ? '32mOK ' : '31mERR' }\033[0m #{details}"
 end
