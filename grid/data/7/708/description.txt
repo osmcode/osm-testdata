@@ -1,1 +1,0 @@
-Valid multipolygon relation with three ways making up two separate outer rings.

@@ -1,1 +1,0 @@
-Invalid multpolygon with single outer ring not closed.

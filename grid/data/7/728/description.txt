@@ -1,1 +1,0 @@
-Multipolygon with one simple outer ring.

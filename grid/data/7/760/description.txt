@@ -1,1 +1,0 @@
-Faking inner ring with outer going back on itself (with relation).

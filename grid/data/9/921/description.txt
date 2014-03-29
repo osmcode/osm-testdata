@@ -1,1 +1,0 @@
-Multipolygon with one outer and one inner ring, tags on outer way, no tags on inner ring.

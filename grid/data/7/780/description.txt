@@ -1,1 +1,0 @@
-Way with different nodes as start and endpoint, but same location of those nodes.

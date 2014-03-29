@@ -1,1 +1,0 @@
-Multipolygon with one outer ring from single way that has different end-nodes, but they have same location.

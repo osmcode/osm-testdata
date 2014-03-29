@@ -1,1 +1,0 @@
-Valid multipolygon with one outer ring and four inner rings touching in a single point.

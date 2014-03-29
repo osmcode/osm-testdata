@@ -1,1 +1,0 @@
-Multipolygon with two outer rings touching in single node.

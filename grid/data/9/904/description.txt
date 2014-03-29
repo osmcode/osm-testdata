@@ -1,1 +1,0 @@
-Multipolygon with one outer and one inner ring, both tagged as "outer".

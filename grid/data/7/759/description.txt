@@ -1,1 +1,0 @@
-Outer going back on itself in single node.

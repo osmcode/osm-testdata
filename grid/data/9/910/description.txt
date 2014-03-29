@@ -1,1 +1,0 @@
-Multipolygon with one outer ring, tags on relation and no tags on ways.

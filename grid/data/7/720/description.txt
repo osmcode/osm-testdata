@@ -1,1 +1,0 @@
-Multipolygon with one outer and one inner ring. They are both oriented clockwise and have the correct role.

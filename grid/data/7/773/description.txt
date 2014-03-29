@@ -1,1 +1,0 @@
-Multipolygon with two inner rings touching in single point, but no common node there.

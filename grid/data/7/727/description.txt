@@ -1,1 +1,0 @@
-Valid multipolygon with one inner and one outer.

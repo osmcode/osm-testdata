@@ -1,1 +1,0 @@
-Multipolygon with one outer ring that should be split into two components.

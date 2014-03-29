@@ -1,1 +1,0 @@
-Valid multipolygon with one concave outer ring and no inner ring.

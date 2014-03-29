@@ -1,1 +1,0 @@
-Multipolygon with one outer ring from two outer ways both with role "inner".
