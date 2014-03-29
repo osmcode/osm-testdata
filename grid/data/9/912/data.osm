@@ -19,6 +19,7 @@
         <nd ref="912003"/>
         <nd ref="912000"/>
         <tag k="test:section" v="mp-tags"/>
+        <tag k="test:id" v="912"/>
         <tag k="building" v="yes"/>
     </way>
 

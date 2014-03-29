@@ -1,1 +1,1 @@
-Vaild multipolygon relation with four ways making up three outer rings touching in three points.
+Valid multipolygon relation with four ways making up three outer rings touching in three points.

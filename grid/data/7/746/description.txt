@@ -1,1 +1,1 @@
-Impossible multipolygon out of two ways
+Impossible multipolygon out of two ways.
