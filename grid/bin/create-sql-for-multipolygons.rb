@@ -12,9 +12,11 @@ require 'json'
 open(ARGV[0]) do |file|
     reference_data = JSON.load(file, nil, {:symbolize_names => true})
     reference_data.each do |test|
-        test[:areas].each do |area|
-            if area[:wkt] != 'INVALID'
-                puts "INSERT INTO multipolygons (test_id, id, from_type, variant, geom) VALUES (#{test[:test_id]}, #{area[:from_id]}, '#{area[:from_type][0]}', '#{area[:variant]}', MultiPolygonFromText('#{area[:wkt]}', 4326));"
+        if test[:areas]
+            test[:areas].each do |area|
+                if area[:wkt] != 'INVALID'
+                    puts "INSERT INTO multipolygons (test_id, id, from_type, variant, geom) VALUES (#{test[:test_id]}, #{area[:from_id]}, '#{area[:from_type][0]}', '#{area[:variant]}', MultiPolygonFromText('#{area[:wkt]}', 4326));"
+                end
             end
         end
     end

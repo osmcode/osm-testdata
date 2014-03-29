@@ -1,5 +1,117 @@
 [
   {
+    "test_id": 100,
+    "description": "A single node"
+  },
+  {
+    "test_id": 101,
+    "description": "Four nodes"
+  },
+  {
+    "test_id": 102,
+    "description": "Two nodes at same location"
+  },
+  {
+    "test_id": 110,
+    "description": "Way with two nodes"
+  },
+  {
+    "test_id": 111,
+    "description": "Way with four nodes"
+  },
+  {
+    "test_id": 112,
+    "description": "Closed way with four nodes"
+  },
+  {
+    "test_id": 113,
+    "description": "Two separate ways"
+  },
+  {
+    "test_id": 114,
+    "description": "Two ways connected end-to-beginning"
+  },
+  {
+    "test_id": 115,
+    "description": "Two ways connected end-to-end"
+  },
+  {
+    "test_id": 116,
+    "description": "Three ways connected in a closed loop."
+  },
+  {
+    "test_id": 120,
+    "description": "Way without any nodes"
+  },
+  {
+    "test_id": 121,
+    "description": "Way with a single node"
+  },
+  {
+    "test_id": 122,
+    "description": "Same node twice in way"
+  },
+  {
+    "test_id": 123,
+    "description": "Way with two nodes at same position"
+  },
+  {
+    "test_id": 124,
+    "description": "Way with three nodes, first two nodes have the same position"
+  },
+  {
+    "test_id": 130,
+    "description": "Crossing ways without common node"
+  },
+  {
+    "test_id": 131,
+    "description": "Crossing ways with common node"
+  },
+  {
+    "test_id": 132,
+    "description": "Crossing ways without common node, but crossing node at same position"
+  },
+  {
+    "test_id": 133,
+    "description": "Self-crossing way without common node"
+  },
+  {
+    "test_id": 134,
+    "description": "Self-crossing way with common node"
+  },
+  {
+    "test_id": 300,
+    "description": "Normal node with uid and user name"
+  },
+  {
+    "test_id": 301,
+    "description": "Empty username on node should not happen"
+  },
+  {
+    "test_id": 302,
+    "description": "No uid and no user name means user is anonymous"
+  },
+  {
+    "test_id": 303,
+    "description": "uid 0 is the anonymous user"
+  },
+  {
+    "test_id": 304,
+    "description": "negative user ids are not allowed (but -1 could have been meant as anonymous user)"
+  },
+  {
+    "test_id": 305,
+    "description": "uid < 0 and username is inconsistent and definitely wrong"
+  },
+  {
+    "test_id": 306,
+    "description": "250 characters in username is okay"
+  },
+  {
+    "test_id": 307,
+    "description": "260 characters in username is too long"
+  },
+  {
     "test_id": 700,
     "description": "Polygon with one closed way.",
     "areas": [
