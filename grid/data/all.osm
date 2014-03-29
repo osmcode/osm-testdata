@@ -2435,6 +2435,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="701"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="702900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="702800" role="outer"/>
@@ -2442,6 +2443,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="702"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="703900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="703800" role="outer"/>
@@ -2449,6 +2451,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="703"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="704900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="704800" role="outer"/>
@@ -2457,6 +2460,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="704"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="705900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="705800" role="outer"/>
@@ -2465,6 +2469,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="705"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="706900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="706800" role="outer"/>
@@ -2473,6 +2478,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="706"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="707900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="707800" role="outer"/>
@@ -2481,6 +2487,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="707"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="708900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="708800" role="outer"/>
@@ -2489,6 +2496,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="708"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="709900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="709800" role="outer"/>
@@ -2498,6 +2506,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="709"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="710900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="710800" role="outer"/>
@@ -2506,6 +2515,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="710"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="711900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="711800" role="outer"/>
@@ -2513,6 +2523,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="711"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="720900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="720800" role="outer"/>
@@ -2520,6 +2531,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="720"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="721900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="721800" role="outer"/>
@@ -2527,6 +2539,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="721"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="722900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="722800" role="outer"/>
@@ -2534,6 +2547,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="722"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="723900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="723800" role="outer"/>
@@ -2541,6 +2555,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="723"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="724900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="724801" role="outer"/>
@@ -2548,6 +2563,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="724"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="725900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="725800" role="outer"/>
@@ -2555,6 +2571,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="725"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="726900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="726800" role="outer"/>
@@ -2562,6 +2579,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="726"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="727900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="727800" role="inner"/>
@@ -2569,12 +2587,14 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="727"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="728900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="728800" role="outer"/>
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="728"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="729900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="729801" role="outer"/>
@@ -2583,6 +2603,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="729"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="730900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="730800" role="inner"/>
@@ -2592,6 +2613,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="730"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="731900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="731800" role="outer"/>
@@ -2603,6 +2625,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="731"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="732900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="732800" role="outer"/>
@@ -2611,6 +2634,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="732"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="740900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="740800" role="outer"/>
@@ -2618,6 +2642,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="740"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="741900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="741800" role="outer"/>
@@ -2625,6 +2650,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="741"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="742900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="742800" role="outer"/>
@@ -2632,6 +2658,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="742"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="743900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="743800" role="outer"/>
@@ -2639,6 +2666,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="743"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="744900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="744800" role="outer"/>
@@ -2646,12 +2674,14 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="744"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="745900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="745800" role="outer"/>
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="745"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="746900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="746800" role="outer"/>
@@ -2659,6 +2689,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="746"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="750900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="750800" role="outer"/>
@@ -2667,6 +2698,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="750"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="751900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="751800" role="outer"/>
@@ -2675,6 +2707,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="751"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="752900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="752800" role="outer"/>
@@ -2683,6 +2716,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="752"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="753900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="753800" role="outer"/>
@@ -2691,6 +2725,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="753"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="754900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="754800" role="outer"/>
@@ -2698,6 +2733,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="754"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="755900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="755800" role="outer"/>
@@ -2705,6 +2741,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="755"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="756900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="756800" role="outer"/>
@@ -2712,6 +2749,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="756"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="757900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="757800" role="outer"/>
@@ -2719,6 +2757,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="757"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="758900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="758800" role="outer"/>
@@ -2726,18 +2765,21 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="758"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="759900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="759800" role="outer"/>
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="759"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="760900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="760800" role="outer"/>
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="760"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="762900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="762800" role="outer"/>
@@ -2745,6 +2787,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="762"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="763900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="763800" role="outer"/>
@@ -2754,6 +2797,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="763"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="764900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="764800" role="inner"/>
@@ -2764,12 +2808,14 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="764"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="765900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="765800" role="outer"/>
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="765"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="766900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="766800" role="inner"/>
@@ -2777,6 +2823,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="766"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="770900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="770800" role="outer"/>
@@ -2784,6 +2831,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="770"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="771900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="771800" role="outer"/>
@@ -2791,6 +2839,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="771"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="772900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="772800" role="inner"/>
@@ -2799,6 +2848,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="772"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="773900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="773800" role="inner"/>
@@ -2807,12 +2857,14 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="773"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="781900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="781800" role="outer"/>
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="781"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="782900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="782800" role="outer"/>
@@ -2821,6 +2873,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="782"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="900900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="900800" role="inner"/>
@@ -2834,6 +2887,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-tags"/>
         <tag k="test:id" v="901"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="902900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="902800" role="outer"/>
@@ -2841,12 +2895,14 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-tags"/>
         <tag k="test:id" v="902"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="903900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="903800" role=""/>
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-tags"/>
         <tag k="test:id" v="903"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="904900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="904800" role="outer"/>
@@ -2855,6 +2911,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-tags"/>
         <tag k="test:id" v="904"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="905900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="905800" role="outer"/>
@@ -2863,6 +2920,7 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-tags"/>
         <tag k="test:id" v="905"/>
+        <tag k="landuse" v="forest"/>
     </relation>
   <relation id="910900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <member type="way" ref="910800" role="outer"/>

@@ -24,5 +24,6 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-tags"/>
         <tag k="test:id" v="901"/>
+        <tag k="landuse" v="forest"/>
     </relation>
 </osm>

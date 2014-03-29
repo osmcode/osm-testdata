@@ -7,6 +7,7 @@
         "from_type": "relation",
         "wkt": "MULTIPOLYGON(((9.21 1.01,9.21 1.04,9.24 1.04,9.24 1.01,9.21 1.01)))",
         "tags": {
+            "landuse": "forest",
             "test:section": "mp-tags",
             "test:id": "902"
         }

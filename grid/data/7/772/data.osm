@@ -50,5 +50,6 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="772"/>
+        <tag k="landuse" v="forest"/>
     </relation>
 </osm>
