@@ -27,12 +27,12 @@ file = open(ARGV[1])
 test_data = JSON.load(file, nil, {:symbolize_names => true})
 file.close
 
-open('compare-areas.out', 'w') do |file|
+open('compare-areas.log', 'w') do |file|
     file.puts "Running at #{Time.now}"
 end
 
-file = open('compare-areas.out', 'a')
-file.sync = true
+LOG = open('compare-areas.log', 'a')
+LOG.sync = true
 
 def print_tags(tags)
     tags.map{ |k,v|
@@ -40,64 +40,107 @@ def print_tags(tags)
     }.join(', ')
 end
 
+# Compare set of reference and test tags given as hashes
 def compare_tags(ref, tst)
+    LOG.puts "    Comparing tags..."
     if ref.nil?
         if tst.nil?
-            return [true, "no tags => OK"]
+            LOG.puts "      No tags => OK"
+            return true
         else
-            return [false, "has tags but ref does not => ERR"]
+            LOG.puts "      Has tags but ref does not => ERR"
+            return false
         end
     end
 
     if tst.nil?
-        return [false, "missing tags (#{ print_tags(ref) }) => ERR"]
+        LOG.puts "      Missing tags (#{ print_tags(ref) }) => ERR"
+        return false
     end
 
     refcpy = ref
     ref.each do |k,v|
         if tst[k] != v
-            return [false, "tag key '#{k}' should be '#{v}' but is '#{tst[k]}' => ERR"]
+            LOG.puts "      Tag key '#{k}' should be '#{v}' but is '#{tst[k]}' => ERR"
+            return false
         end
         tst.delete k
         refcpy.delete k
     end
 
     if refcpy.size != 0
-        return [false, "missing tags (#{ print_tags(refcpy) }) => ERR"]
+        LOG.puts "      Missing tags (#{ print_tags(refcpy) }) => ERR"
+        return false
     end
 
     if tst.size != 0
-        return [false, "additional tags (#{ print_tags(tst) }) => ERR"]
+        LOG.puts "      Additional tags (#{ print_tags(tst) }) => ERR"
+        return false
     end
 
-    return [true, 'tags match => OK']
+    LOG.puts '      Tags match => OK'
+    return true
 end
 
-def compare_area(ref, t)
-    okay = false
-    details = ''
+# Compare reference and test geometries given as WKT
+def compare_geom(ref, tst)
+    LOG.puts "    Comparing geometries..."
+    command = %Q{#{COMPARE_WKT} "#{ref}" "#{tst}" 2>>compare-areas.log}
+    result = `#{command}`
+    result.chomp!
+    LOG.puts "      #{result}"
+    return result =~ / OK$/
+end
 
-    ref[:areas].each do |area|
-        command = %Q{#{COMPARE_WKT} "#{area[:wkt]}" "#{t[:wkt]}" 2>>compare-areas.out}
-        result = `#{command}`
-        result.chomp!
-        (tags_okay, tags_detail) = compare_tags(area[:tags], t[:tags])
+# Compare all aspects of reference to test area
+def compare_area(area, t)
+    geom_okay = compare_geom(area[:wkt], t[:wkt])
+    tags_okay = compare_tags(area[:tags], t[:tags])
+    from_okay = (area[:from_id] == t[:from_id] && area[:from_type] == t[:from_type])
 
-        if result =~ / OK$/ and tags_okay and !area[:used]
-            area[:used] = true
-            okay = true
+    return geom_okay && tags_okay && from_okay
+end
+
+
+def check_variant(variant, areas, td)
+    LOG.puts "  Checking variant #{variant}:"
+
+    used_areas = {}
+
+    td.each_with_index do |t, tindex|
+        areas.select{ |area| !used_areas[area] }.each do |area|
+            LOG.puts "    Checking test area ##{tindex} against reference area ##{area[:index]}..."
+            result = compare_area(area, t)
+            if result
+                used_areas[area] = true
+                break
+            end
         end
-
-        details += " [#{area[:variant]}: #{result}, #{tags_detail}]"
     end
 
-    return [okay, details]
+    if used_areas.size != areas.size
+        LOG.puts "    Not all areas created => ERR"
+        return false
+    end
+
+    true
 end
 
-reference_data.each do |ref|
-    print "#{ref[:test_id]}..."
-    file.puts "============================\n#{ref[:test_id]}:"
+# Get all the test cases from the reference data and check all that
+# have area information in turn
+reference_data.select{ |ref| ref[:areas] }.each do |ref|
 
+    # Number each area in each variant (for debugging output)
+    ref[:areas].each do |variant, areas|
+        areas.each_with_index do |area, index|
+            area[:index] = index
+        end
+    end
+
+    LOG.puts "\n============================\nTesting id #{ref[:test_id]}:"
+    print "#{ref[:test_id]}..."
+
+    # find all test data for this test id
     td = test_data.select do |td|
         td[:test_id] == ref[:test_id]
     end
@@ -107,18 +150,16 @@ reference_data.each do |ref|
         exit 1
     end
 
-    okay = true
-    details = ''
-    td.each do |t|
-        (o, d) = compare_area(ref, t)
-        if ! o
-            okay = false
-        end
-        details += d
-    end
+    # check each variant
+    result = ref[:areas].map{ |variant, areas|
+        variant_result = check_variant(variant, areas, td)
+        LOG.puts "  Variant result: #{ variant_result ? 'OK' : 'ERR' }"
+        variant_result
+    }.include?(true)
 
-    puts " \033[1;#{ okay ? '32mOK ' : '31mERR' }\033[0m #{details}"
+    LOG.puts "Final result: #{ result ? 'OK' : 'ERR' }"
+    puts " \033[1;#{ result ? '32mOK ' : '31mERR' }\033[0m"
 end
 
-file.close
+LOG.close
 
