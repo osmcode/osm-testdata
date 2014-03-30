@@ -123,6 +123,11 @@ def check_variant(variant, areas, td)
         return false
     end
 
+    if td.size != areas.size
+        LOG.puts "    More areas in test data than in reference data => ERR"
+        return false
+    end
+
     true
 end
 
