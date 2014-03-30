@@ -1,6 +1,6 @@
 {
     "test_id": 728,
-    "description": "Multipolygon with one simple outer ring.",
+    "description": "Multipolygon with one simple outer ring and a node member.",
     "areas": {
         "default": [
             {
