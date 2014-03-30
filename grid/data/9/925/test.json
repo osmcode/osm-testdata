@@ -1,6 +1,6 @@
 {
     "test_id": 925,
-    "description": "Multipolygon with one outer and one inner ring, tags on outer way, extra tags on inner ring made from multiple rings.",
+    "description": "Multipolygon with one outer and one inner ring, tags on outer way, extra tags on inner ring made from multiple ways.",
     "areas": {
         "default": [
             {
