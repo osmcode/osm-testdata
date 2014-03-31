@@ -143,6 +143,12 @@ reference_data.select{ |ref| ref[:areas] }.each do |ref|
     end
 
     LOG.puts "\n============================\nTesting id #{ref[:test_id]}:"
+    if ref[:test_id] % 100 == 0
+        puts
+    end
+    if ref[:test_id] % 10 == 0
+        puts
+    end
     print "#{ref[:test_id]}..."
 
     # find all test data for this test id
@@ -162,9 +168,11 @@ reference_data.select{ |ref| ref[:areas] }.each do |ref|
         variant_result
     }.include?(true)
 
-    LOG.puts "Final result: #{ result ? 'OK' : 'ERR' }"
-    puts " \033[1;#{ result ? '32mOK ' : '31mERR' }\033[0m"
+    LOG.puts "Final result: #{ result ? 'OK ' : 'ERR' }"
+    print "\033[1;#{ result ? '32mOK ' : '31mERR' }\033[0m  "
 end
+
+puts
 
 LOG.close
 
