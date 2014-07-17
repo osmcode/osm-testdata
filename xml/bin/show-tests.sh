@@ -20,7 +20,7 @@ for t in $tests; do
     if [ -f data/$t/result ]; then
         result=`cat data/$t/result`
     else
-        result="UNKNOWN RESULT"
+        result="UNKNOWN"
     fi
     echo "$cat_no $cat_name\t$test_id\t$result\t$description"
 done
