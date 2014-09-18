@@ -17,8 +17,6 @@
 
 require 'json'
 
-COMPARE_WKT="#{File.dirname($0)}/compare-wkt.sh"
-
 file = open(ARGV[0])
 reference_data = JSON.load(file, nil, {:symbolize_names => true})
 file.close
@@ -82,11 +80,53 @@ def compare_tags(ref, tst)
     return true
 end
 
+def spatial_sql(query)
+    cmd = "spatialite -batch -bail compare-wkt-tmp.db \"#{query}\""
+    res=`#{cmd} 2>>spatialite-err.log`.chomp!
+    File.delete("compare-wkt-tmp.db")
+    return res
+end
+
+
+def compare_wkt(ref, test)
+    if ref == 'INVALID' && test == 'INVALID'
+       return 0, "both INVALID => OK"
+    end
+    if ref == test
+       return 0, "geoms identical => OK"
+    end
+    if ref == 'INVALID'
+       return 2, "should be INVALID => ERR"
+    end
+    if test == 'INVALID'
+       return 2, "should not be INVALID => ERR"
+    end
+    LOG.puts "Testing reference WKT [#{ref}]:"
+
+    rwkt_ref= spatial_sql("SELECT IsValid(GeomFromText('#{ref}', 4326));")
+    if rwkt_ref != "1"
+      LOG.puts "  Reference geometry is invalid. result: --#{rwkt_ref}--"
+      return 3, "reference geometry is invalid => ERR"
+    end
+    LOG.puts "  Geometry valid"
+
+    rwkt_test= spatial_sql("SELECT IsValid(GeomFromText('#{test}', 4326));")
+    if rwkt_test != "1"
+      LOG.puts "  Test geometry is invalid. result: #{rwkt_test}"
+      return 3, "test geometry is invalid => ERR"
+    end
+    LOG.puts "  Geometry valid"
+
+    result = spatial_sql("SELECT Equals(GeomFromText('#{ref}', 4326), GeomFromText('#{test}', 4326));")
+    return 1, "geoms equal => OK" if result == "1"
+    return 2, "geoms different => ERR" if result == "0"
+    return 3, "unknown failure => ERR"
+end
+
 # Compare reference and test geometries given as WKT
 def compare_geom(ref, tst)
     LOG.puts "    Comparing geometries..."
-    command = %Q{#{COMPARE_WKT} "#{ref}" "#{tst}" 2>>compare-areas.log}
-    result = `#{command}`
+    flag, result = compare_wkt(ref, tst)
     result.chomp!
     LOG.puts "      #{result}"
     return result =~ / OK$/
@@ -131,6 +171,8 @@ def check_variant(variant, areas, td)
     true
 end
 
+result_all = true
+
 # Get all the test cases from the reference data and check all that
 # have area information in turn
 reference_data.select{ |ref| ref[:areas] }.each do |ref|
@@ -169,10 +211,16 @@ reference_data.select{ |ref| ref[:areas] }.each do |ref|
     }.include?(true)
 
     LOG.puts "Final result: #{ result ? 'OK ' : 'ERR' }"
-    print "\033[1;#{ result ? '32mOK ' : '31mERR' }\033[0m  "
+    if ENV['OS']=~/Windows.*/ then
+       print "#{ result ? 'OK ' : 'ERR' }  "
+    else
+       print "\033[1;#{ result ? '32mOK ' : '31mERR' }\033[0m  "
+    end
+    result_all = result_all && result
 end
 
 puts
 
 LOG.close
 
+exit 1 unless result_all
