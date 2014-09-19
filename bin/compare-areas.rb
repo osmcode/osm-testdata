@@ -6,13 +6,11 @@
 #  to the areas described in the REFERENCE-JSON-FILE.
 #
 #  All geometries and tags from the reference data file are checked against
-#  geometries in the test data file. One line per reference geometry is output
-#  containing the test id, the word "OK" or "ERR" in green or red,
-#  respectively, and in square brackets the results for each of the variants in
-#  the reference data file.
+#  geometries in the test data file. Results are printed in short form containing
+#  the test id and the word "OK" or "ERR" (in green or red, respectively).
 #
 #  More detailed (debug) output can be found in the file
-#  compare-areas.out.
+#  compare-areas.log.
 #
 
 require 'json'
@@ -81,9 +79,16 @@ def compare_tags(ref, tst)
 end
 
 def spatial_sql(query)
-    cmd = "spatialite -batch -bail compare-wkt-tmp.db \"#{query}\""
-    res=`#{cmd} 2>>spatialite-err.log`.chomp!
-    File.delete("compare-wkt-tmp.db")
+    database = "compare-wkt-tmp.db"
+    begin
+        # try to delete db file in case there is one from previous run
+        File.delete(database)
+    rescue
+        # ignore if file is missing
+    end
+    cmd = "spatialite -batch -bail #{database} \"#{query}\""
+    res=`#{cmd} 2>>compare-areas.log`.chomp!
+    File.delete(database)
     return res
 end
 
@@ -101,16 +106,17 @@ def compare_wkt(ref, test)
     if test == 'INVALID'
        return 2, "should not be INVALID => ERR"
     end
-    LOG.puts "Testing reference WKT [#{ref}]:"
 
-    rwkt_ref= spatial_sql("SELECT IsValid(GeomFromText('#{ref}', 4326));")
+    LOG.puts "Testing reference WKT [#{ref}]:"
+    rwkt_ref = spatial_sql("SELECT IsValid(GeomFromText('#{ref}', 4326));")
     if rwkt_ref != "1"
-      LOG.puts "  Reference geometry is invalid. result: --#{rwkt_ref}--"
+      LOG.puts "  Reference geometry is invalid. result: #{rwkt_ref}"
       return 3, "reference geometry is invalid => ERR"
     end
     LOG.puts "  Geometry valid"
 
-    rwkt_test= spatial_sql("SELECT IsValid(GeomFromText('#{test}', 4326));")
+    LOG.puts "Testing test WKT [#{test}]:"
+    rwkt_test = spatial_sql("SELECT IsValid(GeomFromText('#{test}', 4326));")
     if rwkt_test != "1"
       LOG.puts "  Test geometry is invalid. result: #{rwkt_test}"
       return 3, "test geometry is invalid => ERR"
@@ -126,10 +132,9 @@ end
 # Compare reference and test geometries given as WKT
 def compare_geom(ref, tst)
     LOG.puts "    Comparing geometries..."
-    flag, result = compare_wkt(ref, tst)
-    result.chomp!
-    LOG.puts "      #{result}"
-    return result =~ / OK$/
+    result, msg = compare_wkt(ref, tst)
+    LOG.puts "      #{msg}"
+    return result <= 1
 end
 
 # Compare all aspects of reference to test area
