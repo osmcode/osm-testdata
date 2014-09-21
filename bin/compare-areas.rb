@@ -82,12 +82,13 @@ def spatial_sql(query)
     database = "compare-wkt-tmp.db"
     begin
         # try to delete db file in case there is one from previous run
-        File.delete(database)
+        File.delete(database) if File.exist?(database)
     rescue
         # ignore if file is missing
     end
     cmd = "spatialite -batch -bail #{database} \"#{query}\""
-    res=`#{cmd} 2>>compare-areas.log`.chomp!
+    res=`#{cmd} 2>compare-areas-err.log`.chomp!
+    File.open("compare-areas-err.log") { |file| IO.copy_stream(file, LOG) }
     File.delete(database)
     return res
 end
