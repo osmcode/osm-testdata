@@ -23,12 +23,8 @@ file = open(ARGV[1])
 test_data = JSON.load(file, nil, {:symbolize_names => true})
 file.close
 
-open('compare-areas.log', 'w') do |file|
-    file.puts "Running at #{Time.now}"
-end
-
-LOG = open('compare-areas.log', 'a')
-LOG.sync = true
+LOG = open('compare-areas.log', 'w')
+LOG.puts "Running at #{Time.now}"
 
 def print_tags(tags)
     tags.map{ |k,v|
@@ -89,6 +85,7 @@ def spatial_sql(query)
     cmd = "spatialite -batch -bail #{database} \"#{query}\""
     res=`#{cmd} 2>compare-areas-err.log`.chomp!
     File.open("compare-areas-err.log") { |file| IO.copy_stream(file, LOG) }
+    File.delete("compare-areas-err.log")
     File.delete(database)
     return res
 end
