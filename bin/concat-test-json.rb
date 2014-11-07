@@ -9,7 +9,7 @@
 
 require 'json'
 
-array = ARGV.map do |filename|
+array = ARGV.sort.map do |filename|
     id = filename.sub(%r{/test\.json$}, '').sub(%r{.*/}, '').to_i
     open(filename) do |file|
         data = JSON.load(file)
