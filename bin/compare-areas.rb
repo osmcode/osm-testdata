@@ -84,6 +84,11 @@ def spatial_sql(query)
     end
     cmd = "spatialite -batch -bail #{database} \"#{query}\""
     res=`#{cmd} 2>compare-areas-err.log`.chomp!
+    if $? != 0
+        STDERR.puts "Calling spatialite failed:"
+        File.open("compare-areas-err.log") { |file| IO.copy_stream(file, STDERR) }
+        exit 1
+    end
     File.open("compare-areas-err.log") { |file| IO.copy_stream(file, LOG) }
     File.delete("compare-areas-err.log")
     File.delete(database)
