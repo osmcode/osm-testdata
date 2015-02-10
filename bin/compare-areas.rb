@@ -75,14 +75,7 @@ def compare_tags(ref, tst)
 end
 
 def spatial_sql(query)
-    database = "compare-wkt-tmp.db"
-    begin
-        # try to delete db file in case there is one from previous run
-        File.delete(database) if File.exist?(database)
-    rescue
-        # ignore if file is missing
-    end
-    cmd = "spatialite -batch -bail #{database} \"#{query}\""
+    cmd = "spatialite -batch -bail :memory: \"#{query}\""
     res=`#{cmd} 2>compare-areas-err.log`.chomp!
     if $? != 0
         STDERR.puts "Calling spatialite failed:"
@@ -91,7 +84,6 @@ def spatial_sql(query)
     end
     File.open("compare-areas-err.log") { |file| IO.copy_stream(file, LOG) }
     File.delete("compare-areas-err.log")
-    File.delete(database)
     return res
 end
 
