@@ -6,12 +6,15 @@
 
 language: ruby
 
+rvm:
+    - 2.1.0
+
 sudo: false
 
 install:
     - gem install json
 
 script:
-    - bin/concat-test-json.rb data/grid/data/*/*/test.json >/tmp/tests.json
+    - ruby bin/concat-test-json.rb grid/data/*/*/test.json >/tmp/tests.json
     - diff -u grid/data/tests.json /tmp/tests.json
 
