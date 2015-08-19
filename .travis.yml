@@ -1,0 +1,14 @@
+#-----------------------------------------------------------------------------
+#
+#  Configuration for continuous integration service at travis-ci.org
+#
+#-----------------------------------------------------------------------------
+
+language: cpp
+
+sudo: false
+
+script:
+    - bin/concat-test-json.rb data/grid/data/*/*/test.json >/tmp/tests.json
+    - diff -u grid/data/tests.json /tmp/tests.json
+
