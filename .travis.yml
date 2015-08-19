@@ -8,6 +8,9 @@ language: cpp
 
 sudo: false
 
+install:
+    - gem install json
+
 script:
     - bin/concat-test-json.rb data/grid/data/*/*/test.json >/tmp/tests.json
     - diff -u grid/data/tests.json /tmp/tests.json
