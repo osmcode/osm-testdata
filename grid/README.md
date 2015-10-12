@@ -28,7 +28,7 @@ future.
 Each test case is in its own directory. It contains the following files:
 
 * `data.osm` - the test data itself
-* `description.txt` - description of the test
+* `test.json` - description and further data about the testcase
 * `result` - contains either the word "valid" or "invalid" to signify
   whether the data in the file is valid, ie it must be parseable by any OSM
   software, or invalid, in which case the handling of the data is unspecified.
@@ -116,7 +116,7 @@ The easiest way is probably something like this:
 * create directory for new test
 * copy over `data.osm` from another test, globally search-and-replace test id
 * add/edit nodes, ways, relations as needed
-* add `description.txt`, `result`, and wkt files
+* add `test.json`, `result`, and wkt files
 
 ## License
 
