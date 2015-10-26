@@ -22,6 +22,7 @@ future.
 * 1 - Basic Geometry Tests
 * 3 - Attribute Tests
 * 7 - Multipolygon Geometry Tests
+* 9 - Multipolygon Roles/Tags Tests
 
 ## Test Cases
 
@@ -34,8 +35,6 @@ Each test case is in its own directory. It contains the following files:
   software, or invalid, in which case the handling of the data is unspecified.
 * `nodes.wkt` (optional) - geometry of all nodes in data.osm in WKT format
 * `ways.wkt` (optional) - geometry of all ways in data.osm in WKT format
-* `multipolygons.wkt` (optional) - geometry of all multipolygons that can be
-  generated from data.osm in WKT format
 * `labels.wkt` (optional) - labels for documentation of test cases
 
 ## ID Space Used
@@ -59,27 +58,41 @@ Individual tests are inside those in a bounding box with 0.1 degree width and
 height. They are arranged in a 10x10 square. So test 700 is in
 (7.0 1.0, 7.1 1.1), 701 is in (7.1 1.0, 7.2 1.1), 710 is in (7.0 1.1, 7.1 1.2).
 
+## The `test.json` File
+
+Each test directory contains a `test.json` file which contains the metadata
+describing the test. It always contains the unique `test_id` and a
+`description` field which contains a human language description of the test.
+
+For multipolygon tests (7xx and 9xx) this JSON file also contains an `area`
+field with further details. Multipolygons are complex and often broken in OSM.
+Any software working with OSM data can decide whether to be strict and only
+work with properly formatted data, or it can work with with the existing data
+and fix it as best as it can. Some test cases that have broken data, take this
+into account and provide both, a description of the test results when
+interpreting the test case strictly and one description describing the results
+after some clever fixing of the data. These are the `default` case and the
+`fix` case. You can find them in the `areas` section of the JSON file.
+
+Each of those `default` and `fix` cases contains an array of objects describing
+the areas that the test case will generate with the following information:
+
+* `from_type` - The type of top-level object this areas was created from (`way`
+  or `relation`)
+* `from_id` - The ID of the object this area was created from.
+* `wkt` - The geometry of the multipolygon in WKT format. You have to take
+  into account that there are several possible WKT descriptions for
+  geometrically identical geometries. So a simple text comparison with the
+  results of your text run is not enough. This can also be the special word
+  `INVALID` if a correct geometry can not be built.
+* `tags` - The OSM tags the resulting area will have.
+
 ## WKT Files
 
-Each test case can contain its nodes, ways, and multipolygons in WKT format.
-To generate the `nodes.wkt` and `ways.wkt` files, run `make create-wkt`. This
-will read the `data.osm` files and create the WKT files. Note that the output
-may not be correct so you should check those files!
-
-The `multipolygons.wkt` file has to be created manually. It can contain several
-lines with the following format:
-
-    <id> <type> <variant> <wkt>
-
-The `id` is the id of the way or relation this multipolygon was created from.
-The `type` is either "w" or "r" depending of whether the multipolygon was
-created from a way or relation. `wkt` is the geometry in WKT format or, if the
-geometry is invalid the string "INVALID". The `variant` can be used to allow
-several different results from the same data. Usually there is only one result
-called "default". But sometimes invalid data can be interpreted in several ways.
-Typically the "default" result will be "INVALID", but there could be a result
-tagged "fix" that shows a geometry a clever algorithm could come up with that
-tries to fix bad data.
+Each test case can contain its nodes and ways in WKT format. To generate those
+`nodes.wkt` and `ways.wkt` files, run `make create-wkt`. This will read the
+`data.osm` files and create the WKT files. Note that the output may not be
+correct so you should check those files!
 
 ## Label Nodes
 
@@ -89,6 +102,16 @@ is not required to read these, but they can be used when visualizing tests for
 instance. Format example:
 
 `POINT(1.2 4.3) This is an important point`
+
+## Concatenated Test Files
+
+For your convenience the `data` directory contains the files `all.osm` and
+`tests.json` which are a concatenation of all the individual `data.osm` and
+`test.json` files, respectively. Depending on your test setup, this might make
+it easier to work with many (or all) tests at the same time.
+
+If you change any of the tests or add new ones, you can re-create those files
+by running `make data/all.osm` and `make data/tests.json`.
 
 ## Spatialite Database
 
