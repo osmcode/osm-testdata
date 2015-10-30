@@ -547,7 +547,7 @@
   },
   {
     "test_id": 732,
-    "description": "Valid multipolygon with two outer rings, one containing an inner.",
+    "description": "Valid multipolygon with two outer rings, one containing an inner. One ring contains a node twice.",
     "areas": {
       "default": [
         {
