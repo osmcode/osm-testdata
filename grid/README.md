@@ -72,7 +72,10 @@ and fix it as best as it can. Some test cases that have broken data, take this
 into account and provide both, a description of the test results when
 interpreting the test case strictly and one description describing the results
 after some clever fixing of the data. These are the `default` case and the
-`fix` case. You can find them in the `areas` section of the JSON file.
+`fix` or `location` case. You can find them in the `areas` section of the JSON
+file. (The difference between the `fix` and the `location` case is that
+`location` cases are easily fixable if the software compares node locations
+instead of only node IDs.)
 
 Each of those `default` and `fix` cases contains an array of objects describing
 the areas that the test case will generate with the following information:

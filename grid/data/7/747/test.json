@@ -9,7 +9,7 @@
                 "wkt": "INVALID"
             }
         ],
-        "fix": [
+        "location": [
             {
                 "from_id": 747900,
                 "from_type": "relation",
