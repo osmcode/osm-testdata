@@ -1,6 +1,6 @@
 {
     "test_id": 748,
-    "description": "Invalid multipolygon because a location is in there twice.",
+    "description": "Invalid multipolygon because there are two nodes with same location. Created from way.",
     "areas": {
         "default": [
             {
