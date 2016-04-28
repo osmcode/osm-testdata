@@ -4,6 +4,8 @@
 This directory contains syntactically valid OSM data files with semantically
 valid and invalid objects. It can be used to test any OSM software.
 
+![The multipolygon tests in the grid](multipolygon-tests.png)
+
 ## Organization of the Test Files
 
 All test data is in the `data` directory. In it you'll find subdirectories for
