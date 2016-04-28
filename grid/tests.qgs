@@ -1,14 +1,41 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="2.1.0-Master">
+<qgis projectname="" version="2.4.0-Chugiak">
     <title></title>
+    <layer-tree-group expanded="1" checked="Qt::Checked" name="">
+        <customproperties/>
+        <layer-tree-group expanded="1" checked="Qt::Checked" name="Overview">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="labels20140221110837046" name="labels">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="nodes20140221105814325" name="nodes">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="ways20140221105814338" name="ways">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="multipolygons20140224153504671" name="multipolygons">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+        <layer-tree-group expanded="1" checked="Qt::Checked" name="Test Framework">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="titles20140220153751089" name="titles">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="grid20140213154358889" name="grid">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+    </layer-tree-group>
     <relations/>
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>0.82500024999999999</xmin>
-            <ymin>-0.35415386986094277</ymin>
-            <xmax>8.17498974999999994</xmax>
-            <ymax>3.45415386986094308</ymax>
+            <xmin>0.77968418516753812</xmin>
+            <ymin>0.81802339436657379</ymin>
+            <xmax>10.40658655431369439</xmax>
+            <ymax>2.2768752135268433</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -25,6 +52,16 @@
         </destinationsrs>
         <layer_coordinate_transform_info/>
     </mapcanvas>
+    <layer-tree-canvas>
+        <custom-order enabled="0">
+            <item>labels20140221110837046</item>
+            <item>nodes20140221105814325</item>
+            <item>ways20140221105814338</item>
+            <item>multipolygons20140224153504671</item>
+            <item>titles20140220153751089</item>
+            <item>grid20140213154358889</item>
+        </custom-order>
+    </layer-tree-canvas>
     <legend updateDrawingOrder="true">
         <legendgroup open="true" checked="Qt::Checked" name="Overview">
             <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="labels" showFeatureCount="0">
@@ -96,10 +133,13 @@
                 <symbols>
                     <symbol alpha="1" type="fill" name="0">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="230,230,230,255"/>
                             <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -111,14 +151,17 @@
                             <prop k="capstyle" v="square"/>
                             <prop k="color" v="0,85,0,255"/>
                             <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_map_unit_scale" v="0,0"/>
                             <prop k="customdash_unit" v="MapUnit"/>
                             <prop k="draw_inside_polygon" v="1"/>
                             <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MapUnit"/>
                             <prop k="penstyle" v="solid"/>
                             <prop k="use_custom_dash" v="0"/>
                             <prop k="width" v="0.01"/>
+                            <prop k="width_map_unit_scale" v="0,0"/>
                             <prop k="width_unit" v="MapUnit"/>
                         </layer>
                     </symbol>
@@ -127,27 +170,36 @@
                             <prop k="capstyle" v="square"/>
                             <prop k="color" v="170,0,0,255"/>
                             <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_map_unit_scale" v="0,0"/>
                             <prop k="customdash_unit" v="MapUnit"/>
                             <prop k="draw_inside_polygon" v="1"/>
                             <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MapUnit"/>
                             <prop k="penstyle" v="solid"/>
                             <prop k="use_custom_dash" v="0"/>
                             <prop k="width" v="0.01"/>
+                            <prop k="width_map_unit_scale" v="0,0"/>
                             <prop k="width_unit" v="MapUnit"/>
                         </layer>
                     </symbol>
                     <symbol alpha="1" type="fill" name="3">
                         <layer pass="0" class="PointPatternFill" locked="0">
                             <prop k="displacement_x" v="0"/>
+                            <prop k="displacement_x_map_unit_scale" v="0,0"/>
                             <prop k="displacement_x_unit" v="MM"/>
                             <prop k="displacement_y" v="1"/>
+                            <prop k="displacement_y_map_unit_scale" v="0,0"/>
                             <prop k="displacement_y_unit" v="MM"/>
                             <prop k="distance_x" v="1.5"/>
+                            <prop k="distance_x_map_unit_scale" v="0,0"/>
                             <prop k="distance_x_unit" v="MM"/>
                             <prop k="distance_y" v="2"/>
+                            <prop k="distance_y_map_unit_scale" v="0,0"/>
                             <prop k="distance_y_unit" v="MM"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
                             <symbol alpha="1" type="marker" name="@3@0">
                                 <layer pass="0" class="SimpleMarker" locked="0">
                                     <prop k="angle" v="0"/>
@@ -156,12 +208,15 @@
                                     <prop k="horizontal_anchor_point" v="1"/>
                                     <prop k="name" v="circle"/>
                                     <prop k="offset" v="0,0"/>
+                                    <prop k="offset_map_unit_scale" v="0,0"/>
                                     <prop k="offset_unit" v="MM"/>
                                     <prop k="outline_style" v="solid"/>
                                     <prop k="outline_width" v="0"/>
+                                    <prop k="outline_width_map_unit_scale" v="0,0"/>
                                     <prop k="outline_width_unit" v="MM"/>
                                     <prop k="scale_method" v="area"/>
                                     <prop k="size" v="0.6"/>
+                                    <prop k="size_map_unit_scale" v="0,0"/>
                                     <prop k="size_unit" v="MM"/>
                                     <prop k="vertical_anchor_point" v="1"/>
                                 </layer>
@@ -314,10 +369,18 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="0" name="available"/>
-                <edittype labelontop="0" editable="1" type="0" name="description"/>
-                <edittype labelontop="0" editable="1" type="0" name="result"/>
-                <edittype labelontop="0" editable="1" type="0" name="test_id"/>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="test_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="available">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="result">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="description">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -362,12 +425,15 @@
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="regular_star"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="outline_style" v="no"/>
                             <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
                             <prop k="size" v="4"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
@@ -520,9 +586,9 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="0" name="OGC_FID"/>
-                <edittype labelontop="0" editable="1" type="0" name="id"/>
-                <edittype labelontop="0" editable="1" type="0" name="label"/>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="label">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -565,10 +631,13 @@
                 <symbols>
                     <symbol alpha="0.294118" type="fill" name="0">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="170,85,0,255"/>
                             <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="no"/>
@@ -577,10 +646,13 @@
                     </symbol>
                     <symbol alpha="1" type="fill" name="1">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="170,85,0,255"/>
                             <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="dense7"/>
                             <prop k="style_border" v="no"/>
@@ -733,10 +805,18 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="0" name="from_type"/>
-                <edittype labelontop="0" editable="1" type="0" name="id"/>
-                <edittype labelontop="0" editable="1" type="0" name="test_id"/>
-                <edittype labelontop="0" editable="1" type="0" name="variant"/>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="test_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="from_type">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="variant">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -781,12 +861,15 @@
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="outline_style" v="no"/>
                             <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
                             <prop k="size" v="1.2"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
@@ -939,7 +1022,12 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="0" name="id"/>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="test_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -981,14 +1069,17 @@
                             <prop k="capstyle" v="square"/>
                             <prop k="color" v="0,0,0,255"/>
                             <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_map_unit_scale" v="0,0"/>
                             <prop k="customdash_unit" v="MM"/>
                             <prop k="draw_inside_polygon" v="0"/>
                             <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="penstyle" v="solid"/>
                             <prop k="use_custom_dash" v="0"/>
                             <prop k="width" v="0.26"/>
+                            <prop k="width_map_unit_scale" v="0,0"/>
                             <prop k="width_unit" v="MM"/>
                         </layer>
                     </symbol>
@@ -1140,7 +1231,9 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="0" name="title"/>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="title">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -1182,20 +1275,28 @@
                             <prop k="capstyle" v="square"/>
                             <prop k="color" v="170,85,0,255"/>
                             <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_map_unit_scale" v="0,0"/>
                             <prop k="customdash_unit" v="MM"/>
                             <prop k="draw_inside_polygon" v="0"/>
                             <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="penstyle" v="solid"/>
                             <prop k="use_custom_dash" v="0"/>
                             <prop k="width" v="0.3"/>
+                            <prop k="width_map_unit_scale" v="0,0"/>
                             <prop k="width_unit" v="MM"/>
                         </layer>
                         <layer pass="1" class="MarkerLine" locked="0">
                             <prop k="interval" v="3"/>
+                            <prop k="interval_map_unit_scale" v="0,0"/>
                             <prop k="interval_unit" v="MM"/>
                             <prop k="offset" v="0"/>
+                            <prop k="offset_along_line" v="0"/>
+                            <prop k="offset_along_line_map_unit_scale" v="0,0"/>
+                            <prop k="offset_along_line_unit" v="MM"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="placement" v="lastvertex"/>
                             <prop k="rotate" v="1"/>
@@ -1207,12 +1308,15 @@
                                     <prop k="horizontal_anchor_point" v="1"/>
                                     <prop k="name" v="filled_arrowhead"/>
                                     <prop k="offset" v="-0.4,0"/>
+                                    <prop k="offset_map_unit_scale" v="0,0"/>
                                     <prop k="offset_unit" v="MM"/>
                                     <prop k="outline_style" v="no"/>
                                     <prop k="outline_width" v="0"/>
+                                    <prop k="outline_width_map_unit_scale" v="0,0"/>
                                     <prop k="outline_width_unit" v="MM"/>
                                     <prop k="scale_method" v="area"/>
                                     <prop k="size" v="3"/>
+                                    <prop k="size_map_unit_scale" v="0,0"/>
                                     <prop k="size_unit" v="MM"/>
                                     <prop k="vertical_anchor_point" v="1"/>
                                 </layer>
@@ -1367,9 +1471,12 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="0" name="OGC_FID"/>
-                <edittype labelontop="0" editable="1" type="0" name="id"/>
-                <edittype labelontop="0" editable="1" type="0" name="test"/>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="test_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
