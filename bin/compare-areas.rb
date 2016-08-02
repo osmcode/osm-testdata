@@ -16,11 +16,11 @@
 require 'json'
 
 file = open(ARGV[0])
-reference_data = JSON.load(file, nil, {:symbolize_names => true})
+reference_data = JSON.load(file, nil, {:symbolize_names => true, :create_additions => false})
 file.close
 
 file = open(ARGV[1])
-test_data = JSON.load(file, nil, {:symbolize_names => true})
+test_data = JSON.load(file, nil, {:symbolize_names => true, :create_additions => false})
 file.close
 
 LOG = open('compare-areas.log', 'w')
