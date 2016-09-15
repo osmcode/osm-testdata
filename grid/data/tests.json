@@ -1437,6 +1437,156 @@
     }
   },
   {
+    "test_id": 790,
+    "description": "Multipolygon relation containing the same way twice.",
+    "areas": {
+      "default": [
+        {
+          "from_id": 790900,
+          "from_type": "relation",
+          "wkt": "INVALID"
+        }
+      ],
+      "location": [
+        {
+          "from_id": 790900,
+          "from_type": "relation",
+          "wkt": "MULTIPOLYGON(((7.05 1.95,7.05 1.91,7.01 1.91,7.01 1.95,7.05 1.95)))",
+          "tags": {
+            "test:section": "mp-geom",
+            "test:id": "790",
+            "area": "yes"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "test_id": 791,
+    "description": "Multipolygon relation containing the two ways using the same nodes in the same order.",
+    "areas": {
+      "default": [
+        {
+          "from_id": 791900,
+          "from_type": "relation",
+          "wkt": "INVALID"
+        }
+      ],
+      "location": [
+        {
+          "from_id": 791900,
+          "from_type": "relation",
+          "wkt": "MULTIPOLYGON(((7.15 1.95,7.15 1.91,7.11 1.91,7.11 1.95,7.15 1.95)))",
+          "tags": {
+            "test:section": "mp-geom",
+            "test:id": "791",
+            "area": "yes"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "test_id": 792,
+    "description": "Multipolygon relation containing two ways using the same nodes in different order.",
+    "areas": {
+      "default": [
+        {
+          "from_id": 792900,
+          "from_type": "relation",
+          "wkt": "INVALID"
+        }
+      ],
+      "location": [
+        {
+          "from_id": 792900,
+          "from_type": "relation",
+          "wkt": "MULTIPOLYGON(((7.25 1.95,7.25 1.91,7.21 1.91,7.21 1.95,7.25 1.95)))",
+          "tags": {
+            "test:section": "mp-geom",
+            "test:id": "792",
+            "area": "yes"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "test_id": 793,
+    "description": "Multipolygon relation containing the two ways using nearly the same nodes.",
+    "areas": {
+      "default": [
+        {
+          "from_id": 793900,
+          "from_type": "relation",
+          "wkt": "INVALID"
+        }
+      ],
+      "location": [
+        {
+          "from_id": 793900,
+          "from_type": "relation",
+          "wkt": "MULTIPOLYGON(((7.35 1.95,7.35 1.91,7.31 1.91,7.31 1.95,7.35 1.95)))",
+          "tags": {
+            "test:section": "mp-geom",
+            "test:id": "793",
+            "area": "yes"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "test_id": 794,
+    "description": "Multipolygon relation containing the three ways using the same nodes in the same order.",
+    "areas": {
+      "default": [
+        {
+          "from_id": 794900,
+          "from_type": "relation",
+          "wkt": "INVALID"
+        }
+      ],
+      "location": [
+        {
+          "from_id": 794900,
+          "from_type": "relation",
+          "wkt": "MULTIPOLYGON(((7.45 1.95,7.45 1.91,7.41 1.91,7.41 1.95,7.45 1.95)))",
+          "tags": {
+            "test:section": "mp-geom",
+            "test:id": "794",
+            "area": "yes"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "test_id": 795,
+    "description": "Multipolygon with one outer and one duplicated inner ring.",
+    "areas": {
+      "default": [
+        {
+          "from_id": 795900,
+          "from_type": "relation",
+          "wkt": "INVALID"
+        }
+      ],
+      "location": [
+        {
+          "from_id": 795900,
+          "from_type": "relation",
+          "wkt": "MULTIPOLYGON(((7.55 1.91,7.51 1.91,7.51 1.95,7.55 1.95,7.55 1.91),(7.54 1.92,7.52 1.92,7.52 1.94,7.54 1.94,7.54 1.92)))",
+          "tags": {
+            "landuse": "forest",
+            "test:section": "mp-geom",
+            "test:id": "795"
+          }
+        }
+      ]
+    }
+  },
+  {
     "test_id": 900,
     "description": "Multipolygon with one outer ring from one way with role 'inner'.",
     "areas": {
