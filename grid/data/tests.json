@@ -1192,6 +1192,19 @@
     }
   },
   {
+    "test_id": 768,
+    "description": "Multipolygon with two overlapping ways.",
+    "areas": {
+      "default": [
+        {
+          "from_id": 768900,
+          "from_type": "relation",
+          "wkt": "INVALID"
+        }
+      ]
+    }
+  },
+  {
     "test_id": 770,
     "description": "Multipolygon with two outer rings touching in single node.",
     "areas": {

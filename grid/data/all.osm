@@ -606,6 +606,13 @@
   <node id="767006" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1" lon="7.78" lat="1.62"/>
   <node id="767007" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1" lon="7.72" lat="1.62"/>
   <node id="767008" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1" lon="7.72" lat="1.63"/>
+  <node id="768000" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1" lon="7.81" lat="1.61"/>
+  <node id="768001" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1" lon="7.81" lat="1.64"/>
+  <node id="768002" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1" lon="7.84" lat="1.64"/>
+  <node id="768003" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1" lon="7.84" lat="1.61"/>
+  <node id="768004" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1" lon="7.87" lat="1.64"/>
+  <node id="768005" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1" lon="7.87" lat="1.61"/>
+  <node id="768006" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1" lon="7.84" lat="1.62"/>
   <node id="770000" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1" lon="7.06" lat="1.72"/>
   <node id="770001" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1" lon="7.02" lat="1.72"/>
   <node id="770002" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1" lon="7.02" lat="1.74"/>
@@ -2301,6 +2308,27 @@
         <tag k="test:id" v="767"/>
         <tag k="area" v="yes"/>
     </way>
+  <way id="768800" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
+        <nd ref="768000"/>
+        <nd ref="768001"/>
+        <nd ref="768002"/>
+        <nd ref="768003"/>
+        <nd ref="768000"/>
+        <tag k="test:section" v="mp-geom"/>
+        <tag k="test:id" v="768"/>
+        <tag k="area" v="yes"/>
+    </way>
+  <way id="768801" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
+        <nd ref="768002"/>
+        <nd ref="768004"/>
+        <nd ref="768005"/>
+        <nd ref="768003"/>
+        <nd ref="768006"/>
+        <nd ref="768002"/>
+        <tag k="test:section" v="mp-geom"/>
+        <tag k="test:id" v="768"/>
+        <tag k="area" v="yes"/>
+    </way>
   <way id="770800" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
         <nd ref="770000"/>
         <nd ref="770001"/>
@@ -3562,6 +3590,14 @@
         <tag k="type" v="multipolygon"/>
         <tag k="test:section" v="mp-geom"/>
         <tag k="test:id" v="766"/>
+        <tag k="landuse" v="forest"/>
+    </relation>
+  <relation id="768900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
+        <member type="way" ref="768800" role="outer"/>
+        <member type="way" ref="768801" role="outer"/>
+        <tag k="type" v="multipolygon"/>
+        <tag k="test:section" v="mp-geom"/>
+        <tag k="test:id" v="768"/>
         <tag k="landuse" v="forest"/>
     </relation>
   <relation id="770900" version="1" timestamp="2014-01-01T00:00:00Z" uid="1" user="test" changeset="1">
