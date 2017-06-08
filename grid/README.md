@@ -24,7 +24,9 @@ future.
 * 1 - Basic Geometry Tests
 * 3 - Attribute Tests
 * 7 - Multipolygon Geometry Tests
-* 9 - Multipolygon Roles/Tags Tests
+* 9 - Multipolygon Roles/Tags Tests. Some of these test contain old-style
+      multipolygons. They will fail against newer code that doesn't know
+      about them.
 
 ## Test Cases
 
