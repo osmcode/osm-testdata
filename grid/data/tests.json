@@ -1551,7 +1551,7 @@
   },
   {
     "test_id": 794,
-    "description": "Multipolygon relation containing the three ways using the same nodes in the same order.",
+    "description": "Multipolygon relation containing three ways using the same nodes in the same order.",
     "areas": {
       "default": [
         {
