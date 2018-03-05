@@ -1500,11 +1500,11 @@
         {
           "from_id": 790900,
           "from_type": "relation",
-          "wkt": "MULTIPOLYGON(((7.05 1.95,7.05 1.91,7.01 1.91,7.01 1.95,7.05 1.95)))",
+          "wkt": "MULTIPOLYGON(((7.05 1.95,7.01 1.95,7.01 1.91,7.05 1.91,7.05 1.95)))",
           "tags": {
+            "landuse": "forest",
             "test:section": "mp-geom",
-            "test:id": "790",
-            "area": "yes"
+            "test:id": "790"
           }
         }
       ]
@@ -1602,9 +1602,9 @@
           "from_type": "relation",
           "wkt": "MULTIPOLYGON(((7.45 1.95,7.45 1.91,7.41 1.91,7.41 1.95,7.45 1.95)))",
           "tags": {
+            "landuse": "forest",
             "test:section": "mp-geom",
-            "test:id": "794",
-            "area": "yes"
+            "test:id": "794"
           }
         }
       ]
