@@ -14,6 +14,7 @@
 #
 
 require 'json'
+require 'open3'
 
 file = open(ARGV[0])
 reference_data = JSON.load(file, nil, {:symbolize_names => true, :create_additions => false})
@@ -75,18 +76,26 @@ def compare_tags(ref, tst)
 end
 
 def spatial_sql(query)
-    cmd = "spatialite -batch -bail :memory: \"#{query}\""
-    res=`#{cmd} 2>compare-areas-err.log`.chomp!
-    if $? != 0
-        STDERR.puts "Calling spatialite failed:"
-        File.open("compare-areas-err.log") { |file| IO.copy_stream(file, STDERR) }
-        exit 1
+    $sl_stdin.puts(query)
+    res = ''
+    err = ''
+    timeout = 10
+    while TRUE do
+        r = IO.select([$sl_stdout ,$sl_stderr], [], [], timeout)
+        if r.nil?
+            if err != ''
+                LOG.puts err
+            end
+            return res.chomp!
+        end
+        if r[0][0] == $sl_stdout
+            res += $sl_stdout.read_nonblock(10000)
+            timeout = 0.001
+        elsif r[0][0] == $sl_stderr
+            err += $sl_stderr.read_nonblock(10000)
+        end
     end
-    File.open("compare-areas-err.log") { |file| IO.copy_stream(file, LOG) }
-    File.delete("compare-areas-err.log")
-    return res
 end
-
 
 def compare_wkt(ref, test)
     if ref == 'INVALID' && test == 'INVALID'
@@ -173,6 +182,14 @@ end
 
 result_all = true
 
+$sl_stdin, $sl_stdout, $sl_stderr, $wait_thr = Open3.popen3('spatialite', '-batch', '-bail', ':memory:')
+
+# spatialite will print put some stuff when starting up, ignore it
+$sl_stdin.puts("SELECT 'COMPARE_AREAS_START';");
+while ($sl_stdout.gets() !~ /COMPARE_AREAS_START/) do
+end
+$sl_stderr.read_nonblock(10000);
+
 # Get all the test cases from the reference data and check all that
 # have area information in turn
 reference_data.select{ |ref| ref[:areas] }.each do |ref|
@@ -218,6 +235,10 @@ reference_data.select{ |ref| ref[:areas] }.each do |ref|
     end
     result_all = result_all && result
 end
+
+$sl_stdin.close
+$sl_stdout.close
+$sl_stderr.close
 
 puts
 
