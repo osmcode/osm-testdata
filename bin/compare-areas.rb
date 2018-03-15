@@ -95,7 +95,7 @@ def spatial_sql(query)
             elsif r[0][0] == $sl_stderr
                 err += $sl_stderr.read_nonblock(10000)
             end
-        rescue IO::WaitReadable
+        rescue IO::WaitReadable, IO::EWOULDBLOCKWaitReadable
             # ignore
         end
     end
@@ -195,7 +195,7 @@ end
 
 begin
     $sl_stderr.read_nonblock(10000);
-rescue IO::WaitReadable
+rescue IO::WaitReadable, IO::EWOULDBLOCKWaitReadable
     # ignore
 end
 
