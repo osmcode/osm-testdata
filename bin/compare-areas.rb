@@ -88,11 +88,15 @@ def spatial_sql(query)
             end
             return res.chomp!
         end
-        if r[0][0] == $sl_stdout
-            res += $sl_stdout.read_nonblock(10000)
-            timeout = 0.001
-        elsif r[0][0] == $sl_stderr
-            err += $sl_stderr.read_nonblock(10000)
+        begin
+            if r[0][0] == $sl_stdout
+                res += $sl_stdout.read_nonblock(10000)
+                timeout = 0.001
+            elsif r[0][0] == $sl_stderr
+                err += $sl_stderr.read_nonblock(10000)
+            end
+        rescue IO::WaitReadable
+            # ignore
         end
     end
 end
@@ -188,7 +192,12 @@ $sl_stdin, $sl_stdout, $sl_stderr, $wait_thr = Open3.popen3('spatialite', '-batc
 $sl_stdin.puts("SELECT 'COMPARE_AREAS_START';");
 while ($sl_stdout.gets() !~ /COMPARE_AREAS_START/) do
 end
-$sl_stderr.read_nonblock(10000);
+
+begin
+    $sl_stderr.read_nonblock(10000);
+rescue IO::WaitReadable
+    # ignore
+end
 
 # Get all the test cases from the reference data and check all that
 # have area information in turn
