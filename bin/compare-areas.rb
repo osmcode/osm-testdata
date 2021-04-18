@@ -80,7 +80,7 @@ def spatial_sql(query)
     res = ''
     err = ''
     timeout = 10
-    while TRUE do
+    while true do
         r = IO.select([$sl_stdout ,$sl_stderr], [], [], timeout)
         if r.nil?
             if err != ''
