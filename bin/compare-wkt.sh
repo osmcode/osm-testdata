@@ -47,7 +47,7 @@ if [ "$WKT_TEST" = "INVALID" ]; then
 fi
 
 echo "Testing reference WKT [$WKT_REF]:" 1>&2
-rwkt_ref=`spatialite -batch -bail $DATABASE "SELECT IsValid(GeomFromText('$WKT_REF', 4326));" | tail -1`
+rwkt_ref=$(spatialite -batch -bail $DATABASE "SELECT IsValid(GeomFromText('$WKT_REF', 4326));" | tail -1)
 if [ "$rwkt_ref" != "1" ]; then
     echo "reference geometry is invalid => ERR"
     echo "  Reference geometry is invalid. result: $rwkt_ref" 1>&2
@@ -58,7 +58,7 @@ fi
 echo "  Geometry valid" 1>&2
 
 echo "Testing test WKT [$WKT_TEST]:" 1>&2
-rwkt_test=`spatialite -batch -bail $DATABASE "SELECT IsValid(GeomFromText('$WKT_TEST', 4326));" | tail -1`
+rwkt_test=$(spatialite -batch -bail $DATABASE "SELECT IsValid(GeomFromText('$WKT_TEST', 4326));" | tail -1)
 if [ "$rwkt_test" != "1" ]; then
     echo "test geometry is invalid => ERR"
     echo "  Test geometry is invalid. result: $rwkt_test" 1>&2
@@ -68,7 +68,7 @@ fi
 
 echo "  Geometry valid" 1>&2
 
-result=`spatialite -batch -bail $DATABASE "SELECT Equals(GeomFromText('$WKT_REF', 4326), GeomFromText('$WKT_TEST', 4326));" | tail -1`
+result=$(spatialite -batch -bail $DATABASE "SELECT Equals(GeomFromText('$WKT_REF', 4326), GeomFromText('$WKT_TEST', 4326));" | tail -1)
 rm -f $DATABASE
 
 if [ "$result" = "1" ]; then
