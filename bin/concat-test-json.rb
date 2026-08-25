@@ -11,16 +11,16 @@ require 'json'
 
 array = ARGV.sort.map do |filename|
     id = filename.sub(%r{/test\.json$}, '').sub(%r{.*/}, '').to_i
-    open(filename) do |file|
-        data = JSON.load(file)
+    File.open(filename) do |file|
+        data = JSON.parse(file.read)
 
         if data['test_id'] != id
-            STDERR.puts "File #{filename} should contain test with id #{id}, but instead contains test_id: #{data['test_id']}"
+            warn "File #{filename} should contain test with id #{id}, but instead contains test_id: #{data['test_id']}"
             exit 1
         end
 
-        if ! data['description']
-            STDERR.puts "WARNING! Missing description for test #{id}."
+        if !data['description']
+            warn "WARNING! Missing description for test #{id}."
         end
 
         data
@@ -28,4 +28,3 @@ array = ARGV.sort.map do |filename|
 end
 
 puts JSON.pretty_generate(array)
-

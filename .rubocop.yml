@@ -1,0 +1,51 @@
+AllCops:
+  NewCops: enable
+
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: empty_lines
+Layout/IndentationWidth:
+  Width: 4
+Layout/SpaceBeforeBlockBraces:
+  EnforcedStyle: no_space
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Enabled: False
+Layout/SpaceInsideStringInterpolation:
+  Enabled: false
+Naming/AccessorMethodName:
+  Enabled: False
+Style/ClassVars:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
+Style/NegatedIf:
+  Enabled: false
+Style/NumericPredicate:
+  EnforcedStyle: comparison
+Style/RegexpLiteral:
+  Enabled: false
+Style/StringConcatenation:
+  Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+
+# The defaults are rather strict here, make them quite lenient for the time
+# being, we can tighten them later
+Metrics/AbcSize:
+  Max: 200
+Metrics/BlockLength:
+  Max: 100
+Metrics/BlockNesting:
+  Max: 5
+Metrics/ClassLength:
+  Max: 400
+Metrics/CyclomaticComplexity:
+  Max: 50
+Metrics/MethodLength:
+  Max: 150
+Metrics/PerceivedComplexity:
+  Max: 100
+
