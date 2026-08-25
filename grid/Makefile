@@ -27,7 +27,7 @@ data-labels.sql: data/*/*/labels.wkt
 
 grid.db: setup.sql $(SQL_FILES)
 	rm -f $@
-	cat $^ | spatialite -batch -bail $@
+	cat $^ | spatialite -batch -bail -init /dev/null $@
 
 data: data/all.osm data/tests.json
 

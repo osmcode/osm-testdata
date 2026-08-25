@@ -186,7 +186,7 @@ end
 
 result_all = true
 
-$sl_stdin, $sl_stdout, $sl_stderr, $wait_thr = Open3.popen3('spatialite', '-batch', '-bail', ':memory:')
+$sl_stdin, $sl_stdout, $sl_stderr, $wait_thr = Open3.popen3('spatialite', '-batch', '-bail', '-init', '/dev/null', ':memory:')
 
 # spatialite will print put some stuff when starting up, ignore it
 $sl_stdin.puts("SELECT 'COMPARE_AREAS_START';");
