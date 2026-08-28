@@ -1205,6 +1205,24 @@
     }
   },
   {
+    "test_id": 769,
+    "description": "Multipolygon with one outer and one inner ring, inner touching outer in two nodes, splitting the outer into two components.",
+    "areas": {
+      "default": [
+        {
+          "from_id": 769900,
+          "from_type": "relation",
+          "wkt": "MULTIPOLYGON(((7.92 1.62,7.95 1.62,7.93 1.65,7.95 1.68,7.92 1.68,7.92 1.62)),((7.95 1.62,7.98 1.62,7.98 1.68,7.95 1.68,7.97 1.65,7.95 1.62)))",
+          "tags": {
+            "landuse": "forest",
+            "test:section": "mp-geom",
+            "test:id": "769"
+          }
+        }
+      ]
+    }
+  },
+  {
     "test_id": 770,
     "description": "Multipolygon with two outer rings touching in single node.",
     "areas": {
