@@ -17,11 +17,11 @@ require 'json'
 require 'open3'
 
 file = File.open(ARGV[0])
-reference_data = JSON.parse(file.read, { symbolize_names: true, create_additions: false })
+reference_data = JSON.parse(file.read, symbolize_names: true)
 file.close
 
 file = File.open(ARGV[1])
-test_data = JSON.parse(file.read, { symbolize_names: true, create_additions: false })
+test_data = JSON.parse(file.read, symbolize_names: true)
 file.close
 
 LOG = File.open('compare-areas.log', 'w')
